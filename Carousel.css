@@ -1,88 +1,64 @@
-
-.container-comentario {
-    width: 100%;
-    margin: 0 auto;
-    padding-top: 100px;
+body{
+    margin: 0;
+    padding: 0;
 }
 
-.comentario-ind {
-    background-color: #D51B21;
-    width: 100%; 
-    
-}
-
-.comentario-ind h2 {
-    color: white;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 36px;
-    text-align: left;
-    width: 80%;
-    margin: auto;
-}
-
-
-#total-comentarios {
-    font-family: sans-serif;
-    color: #ff880c;
-    font-weight: bold;
-    width: 80%;
+.container{
+    padding: 0;
     margin: 20px auto;
-    font-size: 20px;
+}
+
+.receitas{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.carousel-control-prev{
+    margin-right: 200px;
+}
+
+h5 {
+    margin-top: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: #FF880C; /* Cor de fundo laranja */
+    border-radius: 50%; /* Para deixar as setas redondas */
+    width: 40px; /* Largura das setas */
+    height: 40px; /* Altura das setas */
+    opacity: 1;
+    top: 50%; /* Posicionar no meio verticalmente */
+    transform: translateY(-50%); /* Ajustar para centralizar corretamente */
 }
 
 
-hr {
-    width: 80%;
-    margin: auto;
-    border: none;
-    height: 1px;
-    background-color:rgb(194, 191, 191);;
-
+.carrosel{
+    
+    height: 200px;
+    border-bottom: 2px solid rgba(213, 27, 33, 0.3); /* mesma cor vermelha, so mudei pra botar opacidade*/
 }
 
-
-.body-coment {
-    display: flex;
-    align-items: center;
-    margin: auto;
-    border-bottom: 1px solid rgb(120, 120, 120, 0.2);;
-    padding-bottom: 15px;
-    width: 80%;
-}
-
-#user {
-    width: 150px;
-    display: inline-block;
+.receitas{
+    height: 200px;
     text-align: center;
     align-items: center;
-    margin-right: 20px;
 }
 
-#user i {
-    font-size: 50px;
-    margin-right: 10px;
-    color: rgb(120, 120, 120);
+.foto-receita-carrosel{
+    height: 100px;
 }
 
-#user p {
-    font-size: 16px;
-    font-weight: bold;
-    color: rgb(120, 120, 120);
-    margin: 0;
+.avaliacao{
+    font-family: sans-serif;
 }
 
-
-.body-coment p {
-    font-size: 16px;
-    font-weight: bold;
-    color: black;
-    margin: 30px;
-
+.title{
+    color: #FF880C;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    display: flex;
+    justify-content: left;
+    text-align: left;
 }
 
-.date {
-    font-size: 12px;
-    color: rgb(120, 120, 120);
-    margin-left: auto;
-}
