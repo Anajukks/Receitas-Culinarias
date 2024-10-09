@@ -1,27 +1,56 @@
-.rodape{
-    padding: 20px; /* Adiciona um pouco de espaço interno */
-    text-align: center;
-    background-color: #D51B21;
-    margin-top: 100px;
-    
+
+.rodape {
+    background-color: #f7f6f6; /* Cor de fundo escura */
+    padding: 20px;
+    color: #0f0e0e;
 }
-.informacoes{
-    display: inline-block;
+
+.rodape-container {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
     text-align: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    color: #ffffff;
-   
 }
 
-.problema{
-    margin-bottom: 50px;
-    font-size: 24pt;
+.logo-section .logo {
+    width: 325px; /* Tamanho da logo */
     
 }
 
-.contato{
-    font-family: sans-serif;
+.contact-section {
+    text-align: center;
+}
+
+.contact-section h5 {
+    color: #FF880C;
+    font-weight: bold;
+}
+
+.social-section {
+    margin-bottom:60px ;
+    text-align: center;
+}
+
+.social-section h5 {
+    color: #FF880C;
+    font-weight: bold;
+}
+
+.social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.icon {
+    font-size: 24px; /* Tamanho dos ícones */
+    color: #050404;
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    color: #FF880C; /* Cor ao passar o mouse */
 }
