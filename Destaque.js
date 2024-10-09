@@ -4,7 +4,13 @@ import logo from './bife-a-parmegiana.jpg';
 
 export default function Destaque(){
     return(
-        <div>
+        
+        <div className='div-red'>
+            <div className='texto-apres'>
+            <p>Bem-vindo ao Cozinha em Bytes! 🍲✨</p>
+            <p>Aqui, você encontra um espaço dedicado a compartilhar sabores, dicas e receitas que vão inspirar suas aventuras na cozinha!</p>
+            
+            </div>
             <div className='week-food'>
                 <div className='picture-food'>
                     <img src={logo} id='img-destaque'/>
