@@ -1,6 +1,6 @@
-
+/* 
 .rodape {
-    background-color: #f7f6f6; /* Cor de fundo escura */
+    background-color: #f7f6f6; /* Cor de fundo escura 
     padding: 20px;
     color: #0f0e0e;
 }
@@ -15,7 +15,7 @@
 }
 
 .logo-section .logo {
-    width: 325px; /* Tamanho da logo */
+    width: 325px; /* Tamanho da logo 
     
 }
 
@@ -46,11 +46,109 @@
 }
 
 .icon {
-    font-size: 24px; /* Tamanho dos ícones */
+    font-size: 24px; /* Tamanho dos ícones 
     color: #050404;
     transition: color 0.3s;
 }
 
 .icon:hover {
-    color: #FF880C; /* Cor ao passar o mouse */
+    color: #FF880C; /* Cor ao passar o mouse 
+} */
+
+
+/* Rodapé geral */
+.rodape {
+    background-color: #f7f6f6;
+    padding: 20px;
+    color: #0f0e0e;
+    text-align: center;
+}
+
+/* Container do rodapé */
+.rodape-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Logo */
+.logo-section .logo {
+    width: 325px;
+}
+
+/* Seção de contatos */
+.contact-section {
+    text-align: center;
+}
+
+.contact-section h5 {
+    color: #FF880C;
+    font-weight: bold;
+}
+
+/* Seção de redes sociais */
+.social-section {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.social-section h5 {
+    color: #FF880C;
+    font-weight: bold;
+}
+
+/* Ícones de redes sociais */
+.social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.icon {
+    font-size: 24px;
+    color: #050404;
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    color: #FF880C;
+}
+
+/* Media Query para telas menores */
+@media (max-width: 768px) {
+    /* Flexbox no container */
+    .rodape-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Logo centralizada */
+    .logo-section .logo {
+        width: 250px;  /* Reduz o tamanho da logo em telas pequenas */
+    }
+
+    /* Linha abaixo da logo */
+    .logo-section::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #FF880C;
+        margin: 10px 0;
+    }
+
+    /* Ajuste das redes sociais */
+    .social-icons {
+        flex-direction: row;  /* Alinha os ícones horizontalmente */
+    }
+
+    /* Ocultar a seção de contatos em telas pequenas */
+    .contact-section {
+        display: none;
+    }
 }
