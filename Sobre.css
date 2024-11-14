@@ -1,0 +1,59 @@
+/* Estilos gerais */
+.cozinhando, .equipe {
+    width: 80%; /* Faz com que os elementos usem toda a largura disponível */
+    max-width: 400px; /* Limita o tamanho máximo da largura */
+    height: auto; /* Deixa a altura ajustar automaticamente */
+    padding: 10px;
+}
+
+#um {
+    background-color: aquamarine;
+    height: auto; /* Ajusta a altura automaticamente */
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.dois {
+    font-family: sans-serif;
+    width: 100%; /* Garante que o conteúdo ocupe toda a largura disponível */
+    max-width: 600px; /* Limita a largura máxima */
+    margin-left: 20px; /* Dá uma distância entre a imagem e o texto */
+}
+
+/* Ajustes de imagem */
+img {
+    width: 100%; /* Faz com que a imagem ocupe 100% da largura disponível */
+    height: auto; /* Mantém a proporção da imagem */
+    font-family: sans-serif;
+    margin-top: 30px;
+}
+
+/* Disposição em telas grandes */
+.d-flex {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 3rem;
+    margin: 3rem;
+}
+
+/* Media Query para telas pequenas (máximo de 768px) */
+@media (max-width: 768px) {
+    .d-flex {
+        flex-direction: column; /* Alinha os elementos verticalmente em vez de horizontalmente */
+        justify-content: center; /* Centraliza os itens */
+        align-items: center; /* Garante que os itens fiquem centralizados */
+    }
+
+    .um, .dois {
+        width: 100%; /* Ajusta os itens para ocupar toda a largura da tela */
+        margin-bottom: 20px; /* Adiciona um espaço entre os elementos */
+    }
+
+    .dois {
+        text-align: center; /* Centraliza o texto em telas menores */
+    }
+
+    img {
+        width: 80%; /* A imagem ficará um pouco menor em telas pequenas */
+    }
+}
