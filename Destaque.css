@@ -1,75 +1,103 @@
-body{
+body {
     margin: 0;
     padding: 0;
     width: 100%;
 }
 
-/* .div-red{
-    background-color: black;
-    height: 100%;
-    padding: 50px;
-    width: 90%;
-} */
+.div-red {
+    padding: 20px;
+    width: 100%;
+}
 
 .texto-apres {
-    font-family: "Georgia", serif; /* Fonte serifada para um estilo mais delicado */
+    font-family: "Georgia", serif;
     font-size: 1.2em;
     color: #333;
-    margin-top: 50px; /* Espaço acima para descer o texto */
+    margin-top: 50px;
     padding: 20px;
     text-align: left;
     margin-left: 120px;
-  
-    
- 
 }
 
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .texto-apres {
+        margin-left: 20px;
+        font-size: 1em;
+        text-align: center;
+    }
+}
 
-
-/* .texto-apres p {
-    margin: 10px 0;
-    line-height: 1.6;
-} */
-
-
-.week-food{
+.week-food {
     background-color: #D51B21;
     margin-top: 10px;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    text-align: left;
     justify-content: center;
-    height: 100%;
     padding: 50px;
     width: 100%;
-   
 }
 
-#destaque-title{
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    .week-food {
+        flex-direction: column; /* Empilhar conteúdo verticalmente */
+        padding: 20px;
+        text-align: center;
+    }
+}
+
+#destaque-title {
     font-family: fantasy;
     font-size: 30pt;
 }
 
-.destaque-descricao{
+/* Ajuste do título em dispositivos menores */
+@media (max-width: 768px) {
+    #destaque-title {
+        font-size: 24pt;
+    }
+}
+
+.destaque-descricao {
     font-family: sans-serif;
     font-size: 12pt;
     text-align: justify;
 }
 
+/* Ajuste de texto para dispositivos móveis */
+@media (max-width: 768px) {
+    .destaque-descricao {
+        font-size: 10pt;
+    }
+}
 
-#img-destaque{
+#img-destaque {
     width: 350px;
-    height: 250px;
+    height: auto;
     margin-right: 15px;
     padding: 5px;
 }
 
-.information-food{
+/* Ajuste de imagem em dispositivos menores */
+@media (max-width: 768px) {
+    #img-destaque {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto 15px auto; /* Centralizar a imagem */
+    }
+}
+
+.information-food {
     width: 600px;
     color: white;
 }
 
-
-
-
-
+/* Ajuste de largura para dispositivos móveis */
+@media (max-width: 768px) {
+    .information-food {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
