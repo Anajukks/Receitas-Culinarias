@@ -1,15 +1,16 @@
-body{
+/* Ajustes gerais */
+body {
     padding: 0;
     margin: 0;
 }
 
-#logo{
+#logo {
     margin: 0;
-    padding:0;
+    padding: 0;
     height: 150px;
-    
 }
-.search-container{
+
+.search-container {
     width: 100%;
     height: 50px;
     margin-top: 10px;
@@ -28,33 +29,32 @@ body{
 }
 
 .btn-search:hover {
-    background-color: #D51B21
+    background-color: #D51B21;
 }
 
-.form-container{
+.form-container {
     width: 500px;
 }
 
-.navbar{
+.navbar {
     height: 120px;
-    padding-left:50px;
-    padding-right:50px;
+    padding-left: 50px;
+    padding-right: 50px;
     margin: 0;
-        
 }
-#right-navbar{
+
+#right-navbar {
     display: flex;
     text-align: center;
     justify-content: center;
     height: 100%;
 }
 
-.item{
-    display: flex; 
-    align-items: center; 
-    margin: 0 10px; 
+.item {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
 }
-
 
 .menu-icon {
     display: flex;
@@ -63,14 +63,14 @@ body{
     width: 30px;
     height: 24px;
     cursor: pointer;
-  }
-  
+}
+
 .menu-icon div {
     width: 100%;
     height: 4px;
     background-color: #FF880C;
     border-radius: 2px;
-  }
+}
 
 .hide {
     display: none; /* Não ocupa espaço quando escondido */
@@ -80,77 +80,105 @@ body{
     display: block; /* Exibe o menu quando necessário */
 }
 
-.dropdown-item:hover{
+.dropdown-item:hover {
     color: #D51B21;
-    
 }
-
-/* .fixed-top{
-    border-bottom: 2px solid #D51B21;
-    width: 90%;
-    margin: auto;  
-  
-} */
 
 .fixed-top {
     z-index: 1030;
-    position: relative; /* Necessário para o after funcionar  */
+    position: relative;
 }
 
 .fixed-top::after {
     content: '';
     position: absolute;
-    bottom: 0; /* deixar a linha embaixo*/
-    width: 90%; 
-    height: 2px; 
-    background-color: #D51B21; 
+    bottom: 0;
+    width: 90%;
+    height: 2px;
+    background-color: #D51B21;
 }
 
-
-
-.dropdown-menu{
+.dropdown-menu {
     margin-top: 10px;
     background-color: rgb(255, 255, 255);
     z-index: 1;
 }
-.botao_receita{
+
+.botao_receita {
     color: white;
     background-color: #FF880C;
     border: none;
     border-radius: 50px;
 }
 
-.botao_receita:hover{
+.botao_receita:hover {
     background-color: #D51B21;
 }
 
 .bi-person-circle {
     color: #D51B21;
-    
 }
 
-.search-container{
-    width: 100vw;
-    height: 50px;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: sans-serif;
-}
+/* Media Query para telas pequenas */
+@media (max-width: 768px) {
+    /* Ajustando a logo */
+    #logo {
+        height: 100px;  /* Diminui a altura da logo */
+        width: 200px;
+        margin-left: 0px;  
+        margin-right: 140px;  /* move a logo para  a esquerda */
+        padding-top: 10px;
+    }
 
-.btn-search {
-    background-color: #FF880C;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-}
+    /* Ajustando a navbar */
+    .navbar {
+        padding-left: 20px;  /* Diminui o padding à esquerda */
+        padding-right: 10px;  /* Diminui o padding à direita */
+        height: 80px;  /* Diminui a altura da navbar */
+        
+    }
 
-.btn-search:hover {
-    background-color: #D51B21
-}
+    /* Ajustando a posição da logo para se aproximar do menu */
+    .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       
+    }
 
-.form-container{
-    width: 500px;
+    /* Ajustando os itens da navbar (botão e ícone) */
+    #right-navbar {
+        display: flex;
+        justify-content: flex-end;  /* Alinha os itens à direita */
+        gap: 5px;  /* Diminui a distância entre os itens */
+    }
+
+    .item {
+        margin: 0 5px;  /* Diminui a margem entre os itens */
+    }
+
+    /* Menu de hambúrguer */
+    .menu-icon {
+        width: 25px;
+        height: 20px;
+    }
+
+    /* Ajuste da busca */
+    .search-container {
+        padding-top: 30px;
+        height: 30px;  /* Diminui a altura do container de busca */
+        
+        
+    }
+
+    /* Ajustando o botão 'Publique sua receita' */
+    .botao_receita {
+        font-size: 12px;  /* Diminui o tamanho do texto */
+        padding: 5px 9px;  /* Ajusta o padding */
+    }
+
+    /* Ajustando os ícones */
+    .bi-person-circle {
+        font-size: 18px;  /* Diminui o tamanho do ícone */
+    }
 }
