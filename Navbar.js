@@ -3,6 +3,8 @@ import logo from './logo_projeto.png';
 import './Navbar.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
+
+
 export default function Navbar() {
     return (
         <div>
@@ -27,22 +29,14 @@ export default function Navbar() {
             <div className='search-container'>
                 <div className='form-container'>
                     <form className="d-flex">
-                        <input className="form-control me-2" type="search" placeholder="Procurando algo específico?" aria-label="Search"/>
+                        <input className="form-control me-2" type="search" placeholder="Procurando algo específico?   " aria-label="Search"/>
                         <button className="btn btn-outline-success btn-search" type="submit">Buscar</button>
                     </form>
                 </div>
             </div>
         </div>
-        
     );
 }
-
-// Componente MenuIcon
-// function MenuIcon() {
-//     return (
-        
-//     );
-// }
 
 function MenuIcon(){
     const [clique, setClique] = useState(false);
@@ -62,12 +56,11 @@ function MenuIcon(){
 
             <div className={`menu-content dropdown-menu ${clique ? 'show' : 'hide'}`} >
                 <ul className="list-unstyled lista">
-                    <li><a className="dropdown-item" href="#">Contate-nos</a></li>
+                    <li><a className="dropdown-item" href="#">Entrar</a></li>
                     <li><a className="dropdown-item" href="#">Sobre</a></li>
+                    <li><a className="dropdown-item" href="#">Cadastrar Rceita</a></li>
                 </ul>
             </div>
         </div>
-        
     );
 }
-
