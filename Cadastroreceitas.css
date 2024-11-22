@@ -1,0 +1,322 @@
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(to bottom, #ff512f, #ff914d);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  text-align: center;
+}
+
+.header img {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0 30px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.formulario {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px; /* Espaço entre as colunas */
+}
+
+/* Coluna da esquerda */
+.col-esquerda {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 20px;
+  font-size: 14px;
+  background-color: #f8f8f8;
+  outline: none;
+}
+
+.input-group input::placeholder {
+  color: #aaa;
+}
+
+/* Coluna da direita */
+.col-direita {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.modo-preparo label {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Limita a altura dos modos de preparo com rolagem */
+.modo-preparo-lista {
+  max-height: 200px; /* Altura fixa para a área de rolagem */
+  overflow-y: auto;
+  padding-right: 10px; /* Espaço para evitar sobreposição com a barra de rolagem */
+}
+
+.modo-preparo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.modo-preparo-item span {
+  font-weight: bold;
+  background: #f0f0f0;
+  color: #666;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.modo-preparo-item input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 20px;
+  font-size: 14px;
+  background-color: #f8f8f8;
+  outline: none;
+}
+
+.btn-adicionar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ff914d;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.btn-adicionar:hover {
+  background: #ff512f;
+}
+
+/* Botão enviar */
+.btn-enviar {
+  width: 100%;
+  background-color: #ff914d;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.btn-enviar:hover {
+  background-color: #ff512f;
+}
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(to bottom, #ff512f, #ff914d);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  text-align: center;
+}
+
+.header img {
+  width: 50%;
+  height: 40%;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0 30px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.formulario {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px; /* Espaço entre as colunas */
+}
+
+/* Coluna da esquerda */
+.col-esquerda {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 20px;
+  font-size: 14px;
+  background-color: #f8f8f8;
+  outline: none;
+}
+
+.input-group input::placeholder {
+  color: #aaa;
+}
+
+/* Coluna da direita */
+.col-direita {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.modo-preparo label {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Limita a altura dos modos de preparo com rolagem */
+.modo-preparo-lista {
+  max-height: 200px; /* Altura fixa para a área de rolagem */
+  overflow-y: auto;
+  padding-right: 10px; /* Espaço para evitar sobreposição com a barra de rolagem */
+}
+
+.modo-preparo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.modo-preparo-item span {
+  font-weight: bold;
+  background: #f0f0f0;
+  color: #666;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.modo-preparo-item input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 20px;
+  font-size: 14px;
+  background-color: #f8f8f8;
+  outline: none;
+}
+
+.btn-adicionar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ff914d;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.btn-adicionar:hover {
+  background: #ff512f;
+}
+
+/* Botão enviar */
+.btn-enviar {
+  width: 100%;
+  background-color: #ff914d;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.btn-enviar:hover {
+  background-color: #ff512f;
+}
