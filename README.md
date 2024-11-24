@@ -1,4 +1,4 @@
-Instruções para o FRONEND
+Instruções para o FRONTEND
 -
 -
 dê o comando para criar um projeto react "npx create-react-app nome_projeto"
