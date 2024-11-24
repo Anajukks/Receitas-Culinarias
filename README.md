@@ -1,3 +1,17 @@
+Instruções para o FRONEND
+-
+-
+dê o comando para criar um projeto react "npx create-react-app nome_projeto"
+dê os seguintes comandos para instalar as dependências do Bootstrap
+-
+COMANDOS NECESSÁRIOS PARA RODAR O FRONT
+npm install bootstrap    
+npm install react-bootstrap
+npm install react- bootstrap bootstrap
+npm install bootstrap-icons
+npm start - rodar o react
+- Segue abaixo a estrutura do Index.js
+
 //index.js
 
 import React from 'react';
@@ -46,9 +60,11 @@ code {
 }
 
 
-COMANDOS NECESSÁRIOS PARA RODAR O FRONT
-npm install bootstrap    
-npm install react-bootstrap
-npm install react- bootstrap bootstrap
-npm install bootstrap-icons
-npm start
+
+
+Instruções BACKEND
+-
+-
+lembrar-se de copiar o ".env.example" para o ".env", lá estabeleça a conexaão via o mysql ou sql
+se for o mysql(como nós estamos fazendo) tem que startar o mysql no XAMP Control e colocar no .env o nome da database
+(receitas_culinarias) e a db_password do seu mysql, depois dê o comando "php artisan migrate:fresh" e inicie o servidor Laravel.
