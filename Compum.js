@@ -1,79 +1,93 @@
 import React, { useState } from "react";
 import "./Cadastroreceitas.css";
 import logo from "./logo_projeto.png";
-const CadastroReceita = () => {
-  const [passos, setPassos] = useState([""]);
 
-  const adicionarPasso = () => {
-    setPassos([...passos, ""]);
+const RecipeForm = () => {
+  const [recipeName, setRecipeName] = useState("");
+  const [preparationTime, setPreparationTime] = useState(0);
+  const [ingredients, setIngredients] = useState("");
+  const [preparationSteps, setPreparationSteps] = useState(["", "", ""]);
+
+  const handleTimeChange = (event) => {
+    const value = Math.max(0, Number(event.target.value));
+    setPreparationTime(value);
   };
 
-  const atualizarPasso = (index, value) => {
-    const novosPassos = [...passos];
-    novosPassos[index] = value;
-    setPassos(novosPassos);
+  const addPreparationStep = () => {
+    setPreparationSteps([...preparationSteps, ""]);
+  };
+
+  const handleStepChange = (index, value) => {
+    const steps = [...preparationSteps];
+    steps[index] = value;
+    setPreparationSteps(steps);
   };
 
   return (
-    <div className="container">
-      <div className="header">
-        <img
-          src={logo} // Substitua pelo logo real
-          alt="Logo Cozinha em Bytes"
-        />
-        <h1>Cadastrar Receitas</h1>
+    <div className="form-container">
+      <div className="form-logo">
+        <img src={logo} alt="Logo Cozinha em Bytes" />
       </div>
-      <form className="formulario">
-        {/* Coluna esquerda */}
-        <div className="col-esquerda">
-          <div className="input-group">
-            <label htmlFor="titulo">Título da receita*</label>
-            <input type="text" id="titulo" placeholder="Digite o título" />
-          </div>
-          <div className="input-group">
-            <label htmlFor="tempo">Tempo de preparo*</label>
-            <input type="number" id="tempo" placeholder="Em minutos" />
-          </div>
-          <div className="input-group">
-            <label htmlFor="ingredientes">Ingredientes*</label>
+      <h1 className="form-title">CADASTRAR RECEITAS</h1>
+      <div className="form-columns">
+        <div className="left-column">
+          <label>
+            Título da receita
             <input
               type="text"
-              id="ingredientes"
-              placeholder="Separe por ponto e vírgula (;)"
+              value={recipeName}
+              onChange={(e) => setRecipeName(e.target.value)}
+              placeholder="Digite o título"
+              className="form-input"
             />
-          </div>
+          </label>
+          <label>
+            Tempo de preparo
+            <input
+              type="number"
+              value={preparationTime}
+              onChange={handleTimeChange}
+              placeholder="Em minutos"
+              className="form-input"
+            />
+          </label>
+          <label>
+            Ingredientes
+            <input
+              type="text"
+              value={ingredients}
+              onChange={(e) => setIngredients(e.target.value)}
+              placeholder="Separe por ponto e vírgula (;)"
+              className="form-input"
+            />
+          </label>
         </div>
-
-        {/* Coluna direita */}
-        <div className="col-direita">
-          <label>Modo de preparo*</label>
-          <div className="modo-preparo-lista">
-            {passos.map((passo, index) => (
-              <div className="modo-preparo-item" key={index}>
-                <span>{index + 1}</span>
+        <div className="right-column">
+          <h2 className="preparation-title">Modo de preparo</h2>
+          <div className="preparation-steps">
+            {preparationSteps.map((step, index) => (
+              <div key={index} className="preparation-step">
+                <span className="step-number">{index + 1}</span>
                 <input
                   type="text"
-                  value={passo}
-                  onChange={(e) => atualizarPasso(index, e.target.value)}
+                  value={step}
+                  onChange={(e) => handleStepChange(index, e.target.value)}
                   placeholder={`Passo ${index + 1}`}
+                  className="step-input"
                 />
               </div>
             ))}
           </div>
-          <button
-            type="button"
-            className="btn-adicionar"
-            onClick={adicionarPasso}
-          >
+          <button className="add-step-button" onClick={addPreparationStep}>
             +
           </button>
         </div>
-      </form>
-      <button type="submit" className="btn-enviar">
-        Enviar
+      </div>
+      <button type="submit" className="submit-button">
+        ENVIAR
       </button>
     </div>
   );
 };
 
-export default CadastroReceita;
+export default RecipeForm;

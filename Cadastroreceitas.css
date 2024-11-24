@@ -1,322 +1,150 @@
+
 body {
-  margin: 0;
-  font-family: "Arial", sans-serif;
+  font-family: 'Arial', sans-serif;
   background: linear-gradient(to bottom, #ff512f, #ff914d);
-  color: #333;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.container {
-  max-width: 900px;
-  width: 100%;
-  background: #fff;
-  border-radius: 20px;
-  padding: 40px 30px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+.form-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 800px;
 }
 
-.header {
-  text-align: center;
-}
-
-.header img {
-  width: 100px;
-  margin-bottom: 10px;
-}
-
-.header h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 10px 0 30px;
-  color: #333;
-  text-transform: uppercase;
-}
-
-.formulario {
+.form-logo {
   display: flex;
-  justify-content: space-between;
-  gap: 40px; /* Espaço entre as colunas */
+  justify-content: center; 
+  margin-bottom: 20px;
 }
 
-/* Coluna da esquerda */
-.col-esquerda {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.input-group label {
-  display: block;
-  font-weight: bold;
-  font-size: 14px;
-  margin-bottom: 8px;
-}
-
-.input-group input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #dcdcdc;
-  border-radius: 20px;
-  font-size: 14px;
-  background-color: #f8f8f8;
-  outline: none;
-}
-
-.input-group input::placeholder {
-  color: #aaa;
-}
-
-/* Coluna da direita */
-.col-direita {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.modo-preparo label {
-  font-weight: bold;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-/* Limita a altura dos modos de preparo com rolagem */
-.modo-preparo-lista {
-  max-height: 200px; /* Altura fixa para a área de rolagem */
-  overflow-y: auto;
-  padding-right: 10px; /* Espaço para evitar sobreposição com a barra de rolagem */
-}
-
-.modo-preparo-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.modo-preparo-item span {
-  font-weight: bold;
-  background: #f0f0f0;
-  color: #666;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-}
-
-.modo-preparo-item input {
-  flex: 1;
-  padding: 12px;
-  border: 1px solid #dcdcdc;
-  border-radius: 20px;
-  font-size: 14px;
-  background-color: #f8f8f8;
-  outline: none;
-}
-
-.btn-adicionar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #ff914d;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background 0.3s;
-}
-
-.btn-adicionar:hover {
-  background: #ff512f;
-}
-
-/* Botão enviar */
-.btn-enviar {
-  width: 100%;
-  background-color: #ff914d;
-  color: white;
-  border: none;
-  padding: 15px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 25px;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  margin-top: 20px;
-}
-
-.btn-enviar:hover {
-  background-color: #ff512f;
-}
-body {
-  margin: 0;
-  font-family: "Arial", sans-serif;
-  background: linear-gradient(to bottom, #ff512f, #ff914d);
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.container {
-  max-width: 900px;
-  width: 100%;
-  background: #fff;
-  border-radius: 20px;
-  padding: 40px 30px;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.header {
-  text-align: center;
-}
-
-.header img {
+.form-logo img {
   width: 50%;
-  height: 40%;
+  height: 20%;
 }
 
-.header h1 {
+.form-title {
   font-size: 24px;
-  font-weight: bold;
-  margin: 10px 0 30px;
-  color: #333;
-  text-transform: uppercase;
+  font-weight: normal !important;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.formulario {
+.form-columns {
   display: flex;
-  justify-content: space-between;
-  gap: 40px; /* Espaço entre as colunas */
+  gap: 40px; 
 }
 
-/* Coluna da esquerda */
-.col-esquerda {
+.left-column,
+.right-column {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
-.input-group label {
-  display: block;
-  font-weight: bold;
-  font-size: 14px;
-  margin-bottom: 8px;
-}
-
-.input-group input {
+.form-input {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #dcdcdc;
-  border-radius: 20px;
-  font-size: 14px;
-  background-color: #f8f8f8;
-  outline: none;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
 }
 
-.input-group input::placeholder {
-  color: #aaa;
-}
-
-/* Coluna da direita */
-.col-direita {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.modo-preparo label {
-  font-weight: bold;
-  font-size: 14px;
+.preparation-title {
   margin-bottom: 10px;
+  font-weight: normal !important;
+  font-size: 16px;
+  display: block;
+  margin-top: 0px; 
 }
 
-/* Limita a altura dos modos de preparo com rolagem */
-.modo-preparo-lista {
-  max-height: 200px; /* Altura fixa para a área de rolagem */
+.preparation-steps {
+  max-height: 200px;
   overflow-y: auto;
-  padding-right: 10px; /* Espaço para evitar sobreposição com a barra de rolagem */
+  margin-bottom: 50px;
+  padding-right: 10px; 
 }
 
-.modo-preparo-item {
+.preparation-step {
   display: flex;
   align-items: center;
-  gap: 10px;
   margin-bottom: 10px;
 }
 
-.modo-preparo-item span {
-  font-weight: bold;
-  background: #f0f0f0;
-  color: #666;
+.step-number {
+  display: inline-block;
   width: 30px;
   height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  line-height: 30px;
+  text-align: center;
+  background-color: #f5f5f5;
   border-radius: 50%;
+  margin-right: 10px;
+  font-weight: bold;
 }
 
-.modo-preparo-item input {
+.step-input {
   flex: 1;
-  padding: 12px;
-  border: 1px solid #dcdcdc;
-  border-radius: 20px;
-  font-size: 14px;
-  background-color: #f8f8f8;
-  outline: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
 }
 
-.btn-adicionar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #ff914d;
-  border: none;
-  border-radius: 50%;
+.add-step-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
   width: 40px;
   height: 40px;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background 0.3s;
-}
-
-.btn-adicionar:hover {
-  background: #ff512f;
-}
-
-/* Botão enviar */
-.btn-enviar {
-  width: 100%;
-  background-color: #ff914d;
-  color: white;
+  background-color: #ff6f00;
+  color: #fff;
+  font-size: 24px;
   border: none;
-  padding: 15px;
-  font-size: 16px;
-  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  border-radius: 25px;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
+}
+
+.add-step-button:hover {
+  background-color: #e65c00;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  background-color: #ff6f00;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
   margin-top: 20px;
 }
 
-.btn-enviar:hover {
-  background-color: #ff512f;
+.submit-button:hover {
+  background-color: #e65c00;
+}
+
+
+.right-column {
+  position: relative;
+}
+
+.right-column .preparation-title {
+  margin-top: 0; 
+  display: flex;
+  align-items: center;
+}
+
+.left-column label:first-child {
+  margin-bottom: 5px;
 }
