@@ -1,0 +1,860 @@
+openapi: "3.0.1"
+info:
+  title: Receitas Culinarias
+  description: >
+    Aplicação de Receitas Culinárias.
+    Um website de receitas culinárias é uma aplicação em que usuários divulgam suas receitas para outros usuários da rede.
+    Esses receitas possuem título, descrição, ingredientes, modo de preparo, tempo de preparo e uma imagem correspondente.
+    As receitas também podem ser avaliadas pelos usuários, com estrelas de 1 a 5, o que aparece é a média das avaliações.
+    As receitas podem ser comentadas por outros usuários, para construir uma feedback da receita ao dono da receita.
+    Nessa versão, há cadastro de todas as entidades com suporte geral, mas não há segurança de dados.
+  version: "1.0"
+servers:
+  - url: http://{host}:{porta}/api
+    variables:
+      host:
+        default: localhost
+      porta:
+        default: "8000"
+
+paths:
+  /usuarios:
+    get:
+      operationId: UsuarioIndex
+      summary: Retornar todos os usuários
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/usuario"
+    post:
+      operationId: UsuarioStore
+      summary: Criar um novo usuário
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                matricula:
+                  type: string
+                  nullable: true
+                email:
+                  type: string
+                senha:
+                  type: string
+      responses:
+        201:
+          description: Usuário Criado
+        422:
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Erro de validação."
+                  errors:
+                    type: object
+                    properties:
+                      email:
+                        type: array
+                        items:
+                          type: string
+                        example: ["Este email já está em uso."]
+                      name:
+                        type: array
+                        items:
+                          type: string
+                        example: ["O nome fornecido é inválido."]
+                      senha:
+                        type: array
+                        items:
+                          type: string
+                        example: ["A senha deve ter pelo menos 8 caracteres."]
+
+  /usuarios/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+
+    get:
+      operationId: UsuarioShow
+      summary: Acessar informações de usuário
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/usuario"
+        404:
+          description: Usuário não encontrado.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Usuário não encontrado."
+
+    put:
+      operationId: UsuarioUpdate
+      summary: Alterar informações de usuário
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                email:
+                  type: string
+                matricula:
+                  type: string
+      responses:
+        200:
+          description: OK.
+        404:
+          description: Usuário não encontrado.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Usuário não encontrado."
+        422:
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Erro de validação."
+                  errors:
+                    type: object
+                    properties:
+                      email:
+                        type: array
+                        items:
+                          type: string
+                        example: ["Este email já está em uso."]
+                      name:
+                        type: array
+                        items:
+                          type: string
+                        example: ["O nome fornecido é inválido."]
+                      senha:
+                        type: array
+                        items:
+                          type: string
+                        example: ["A senha deve ter pelo menos 8 caracteres."]
+
+    delete:
+      operationId: UsuarioDestroy
+      summary: Apagar usuário
+      responses:
+        204:
+          description: Usuário excluído.
+        404:
+          description: Usuário não encontrado.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Usuário não encontrado."
+
+  /receitas:
+    get:
+      operationId: ReceitaIndex
+      summary: Retornar todas as Receitas
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/receita"
+    post:
+      operationId: ReceitaStore
+      summary: Criar uma nova receita
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  description: ID da receita
+                  example: 1
+                usuario_id:
+                  type: integer
+                  description: ID do Dono da Receita
+                  example: 2
+                titulo:
+                  type: string
+                  description: Título da Receita
+                  example: Frango Assado
+                ingredientes:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      nome:
+                        type: string
+                        description: Nome do ingrediente
+                        example: "sal"
+                      quantidade:
+                        type: string
+                        description: Quantidade do ingrediente
+                        example: "1 colher"
+                modo_de_preparo:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      descricao:
+                        type: string
+                        description: "Descrição do passo n do índice para a receita"
+                        example: "Coloque 1 litro de água na panela."
+                tempo_de_preparo:
+                  type: string
+                  example: "40 minutos"
+                imagem:
+                  type: string
+                  format: binary
+                  description: Arquivo de imagem a ser enviado
+                  example: "String binaria"
+      responses:
+        "201":
+          description: Receita Criada
+        "422":
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Erro de validação."
+                  errors:
+                    type: object
+                    properties:
+                      usuario_id:
+                        type: array
+                        items:
+                          type: string
+                        example: ["O usuário indicado não existe"]
+                      titulo:
+                        type: array
+                        items:
+                          type: string
+                        example:
+                          ["O título deve ter, no mínimo, 10 caracteres."]
+                      ingredientes:
+                        type: array
+                        items:
+                          type: string
+                        example:
+                          [
+                            "O campo ingredientes devem ser preenchido.",
+                            "O campo ingredientes deve ser um array.",
+                            "Os ingredientes devem ser uma lista de 1 até n ingredientes.",
+                            "Cada ingrediente precisa de um nome e quantidade.",
+                            "O campo de nome deve ser uma string",
+                            "O campo de quantidade deve ser uma string: uma colher, 1x, 500g...",
+                          ]
+                      modo_de_preparo:
+                        type: array
+                        items:
+                          type: string
+                        example:
+                          [
+                            O campo modo de preparo deve ser um array.,
+                            O campo modo_de_preparo de ser preenchido.,
+                            O modo de preparo deve possuir uma lista de 1 até n passos.,
+                            Cada passo do modo de preparo precisa ter uma descricao.,
+                            Cada descrição deve ser uma string.,
+                          ]
+
+                      tempo_de_preparo:
+                        type: array
+                        items:
+                          type: string
+                        example:
+                          [
+                            O campo tempo de preparo deve ser preenchido.,
+                            "O campo tempo de preparo deve ser uma string: 1 hora, 30 minutos, 3 dias...",
+                          ]
+                      imagem:
+                        type: array
+                        items:
+                          type: string
+                        example: ["O arquivo de imagem precisa ser preenchido."]
+
+  /receitas/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+
+    get:
+      operationId: ReceitaShow
+      summary: Acessar informações de receita
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/receita"
+        404:
+          description: Receita não encontrado.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Receita não encontrada."
+
+    put:
+      operationId: ReceitaUpdate
+      summary: Alterar informações de receita
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/receita"
+      responses:
+        200:
+          description: OK
+        404:
+          description: Receita não encontrada.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Receita não encontrada."
+        422:
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Erro de validação."
+                  errors:
+                    type: object
+                    properties:
+                      usuario_id:
+                        type: array
+                        items:
+                          type: string
+                        example: ["O usuário indicado não existe"]
+                      titulo:
+                        type: array
+                        items:
+                          type: string
+                        example:
+                          ["O título deve ter, no mínimo, 10 caracteres."]
+                      ingredientes:
+                        type: array
+                        items:
+                          type: string
+                        example:
+                          [
+                            "O campo ingredientes devem ser preenchido.",
+                            "O campo ingredientes deve ser um array.",
+                            "Os ingredientes devem ser uma lista de 1 até n ingredientes.",
+                            "Cada ingrediente precisa de um nome e quantidade.",
+                            "O campo de nome deve ser uma string",
+                            "O campo de quantidade deve ser uma string: uma colher, 1x, 500g...",
+                          ]
+                      modo_de_preparo:
+                        type: array
+                        items:
+                          type: string
+                        example:
+                          [
+                            O campo modo de preparo deve ser um array.,
+                            O campo modo_de_preparo de ser preenchido.,
+                            O modo de preparo deve possuir uma lista de 1 até n passos.,
+                            Cada passo do modo de preparo precisa ter uma descricao.,
+                            Cada descrição deve ser uma string.,
+                          ]
+
+                      tempo_de_preparo:
+                        type: array
+                        items:
+                          type: string
+                        example:
+                          [
+                            O campo tempo de preparo deve ser preenchido.,
+                            "O campo tempo de preparo deve ser uma string: 1 hora, 30 minutos, 3 dias...",
+                          ]
+                      imagem:
+                        type: array
+                        items:
+                          type: string
+                        example: ["O arquivo de imagem precisa ser preenchido."]
+
+    delete:
+      operationId: ReceitaDestroy
+      summary: Apagar receita
+      responses:
+        200:
+          description: OK
+        404:
+          description: Receita não encontrada.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Receita não encontrada."
+
+  /avaliacoes:
+    get:
+      operationId: AvaliacaoIndex
+      summary: Retorna todos as avaliações
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/avaliacao"
+    post:
+      operationId: AvaliacaoStore
+      summary: Criar uma nova avaliação
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/avaliacao"
+      responses:
+        "201":
+          description: Avaliação Criada
+        "422":
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Erro de validação."
+                  errors:
+                    type: object
+                    properties:
+                      usuario_id:
+                        type: array
+                        items:
+                          type: string
+                        example: ["O usuário indicado não existe. "]
+                      receita_id:
+                        type: array
+                        items:
+                          type: string
+                        example: ["A receita indicada não existe. "]
+                      estrelas:
+                        type: array
+                        items:
+                          type: string
+                        example:
+                          ["O campo estrelas precisa de um valor entre 1 e 5. "]
+
+  /avaliacoes/{usuario_id}/{receita_id}:
+    parameters:
+      - name: usuario_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: receita_id
+        in: path
+        required: true
+        schema:
+          type: integer
+
+    get:
+      operationId: AvaliacaoShow
+      summary: Acessar informações de uma avaliação de um usuário em uma receita
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/avaliacao"
+        404:
+          description: Avaliação não encontrada.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Avaliação não encontrada"
+
+    post:
+      operationId: AvaliacaoUpdate
+      summary: Alterar informações de uma avaliação de um usuario em uma receita
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/avaliacao"
+      responses:
+        200:
+          description: Avaliação atualizada
+        404:
+          description: Avaliação não encontrada.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Avaliação não encontrada."
+        422:
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Erro de validação."
+                  errors:
+                    type: object
+                    properties:
+                      usuario_id:
+                        type: array
+                        items:
+                          type: string
+                        example: ["O usuário indicado não existe. "]
+                      receita_id:
+                        type: array
+                        items:
+                          type: string
+                        example: ["A receita indicada não existe. "]
+                      estrelas:
+                        type: array
+                        items:
+                          type: string
+                        example:
+                          ["O campo estrelas precisa de um valor entre 1 e 5. "]
+
+    delete:
+      operationId: AvaliacaoDestroy
+      summary: Apagar avaliação
+      responses:
+        200:
+          description: Avaliação excluída
+        404:
+          description: Avaliação não encontrada.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Avaliação não encontrada."
+
+  /comentarios:
+    get:
+      operationId: ComentarioIndex
+      summary: Retorna todos os comentario
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/comentario"
+    post:
+      operationId: ComentarioStore
+      summary: Criar um novo comentario
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/comentario"
+      responses:
+        "201":
+          description: Comentário Criado
+        "422":
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Erro de validação."
+                  errors:
+                    type: object
+                    properties:
+                      usuario_id:
+                        type: array
+                        items:
+                          type: string
+                        example: ["O usuário indicado não existe. "]
+                      receita_id:
+                        type: array
+                        items:
+                          type: string
+                        example: ["A receita indicada não existe. "]
+                      texto:
+                        type: array
+                        items:
+                          type: string
+                        example: ["O comentário precisa de um texto. "]
+
+  /comentarios/{usuario_id}/{receita_id}:
+    parameters:
+      - name: usuario_id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: receita_id
+        in: path
+        required: true
+        schema:
+          type: integer
+
+    get:
+      operationId: ComentarioShow
+      summary: Acessar informações do comentário de um usuário em uma receita
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/comentario"
+        404:
+          description: Comentário não encontrado.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Comentário não encontrado."
+
+    post:
+      operationId: ComentarioUpdate
+      summary: Alterar informações do comentario de um usuario em uma receita
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/comentario"
+      responses:
+        200:
+          description: Comentário atualizado
+        404:
+          description: Comentário não encontrado.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Comentário não encontrado."
+        422:
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Erro de validação."
+                  errors:
+                    type: object
+                    properties:
+                      usuario_id:
+                        type: array
+                        items:
+                          type: string
+                        example: ["O usuário indicado não existe. "]
+                      receita_id:
+                        type: array
+                        items:
+                          type: string
+                        example: ["A receita indicada não existe. "]
+                      texto:
+                        type: array
+                        items:
+                          type: string
+                        example: ["O comentário precisa de um texto. "]
+
+    delete:
+      operationId: ComentarioDestroy
+      summary: Apagar comentario
+      responses:
+        200:
+          description: Comentário excluído
+        404:
+          description: Comentário não encontrado.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "COmentário não encontrado."
+
+components:
+  schemas:
+    usuario:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        nome:
+          type: string
+          example: Ana
+        matricula:
+          type: string
+          nullable: true
+          example: 2021001101023
+        email:
+          type: string
+          example: ana.julia@ifrn.edu.br
+        senha:
+          type: string
+          example: senhaForte345@#
+
+    receita:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: ID da receita
+          example: 1
+        usuario_id:
+          type: integer
+          description: ID do Dono da Receita
+          example: 2
+        titulo:
+          type: string
+          description: Título da Receita
+          example: Frango Assado
+        ingredientes:
+          type: array
+          items:
+            type: object
+            properties:
+              nome:
+                type: string
+                description: Nome do ingrediente
+              quantidade:
+                type: string
+                description: Quantidade do ingrediente
+                example: "1 colher, 1kg, 3x"
+        modo_de_preparo:
+          type: array
+          items:
+            type: object
+            properties:
+              descricao:
+                type: string
+                description: "Descrição do passo n do índice para a receita"
+                example: "Coloque 1 litro de água na panela."
+        tempo_de_preparo:
+          type: string
+          example: "40 minutos"
+        imagem:
+          type: string
+          format: binary
+          description: Arquivo de imagem a ser enviado
+
+    avaliacao:
+      type: object
+      properties:
+        receita_id:
+          type: integer
+          example: 1
+        usuario_id:
+          type: integer
+          example: 2
+        estrelas:
+          type: integer
+          enum: [1, 2, 3, 4, 5]
+          example: 5
+
+    comentario:
+      type: object
+      properties:
+        receita_id:
+          type: integer
+          example: 1
+        usuario_id:
+          type: integer
+          example: 2
+        texto:
+          type: string
+          example: "Muito boa a receita!"
