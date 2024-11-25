@@ -64,7 +64,7 @@ export default function Cadastro() {
   };
 
   return (
-    <div className="cadastro-container">
+    <div className="cadastro-container full-page">
       <div className="cadastro-form">
         <img src={logo}alt="Logo Cozinha em Bytes" className="cadastro-logo" />
         <h2>CRIAR CONTA</h2>
