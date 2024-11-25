@@ -1,29 +1,29 @@
 import React, { useState } from "react";
-import "./Cadastroreceitas.css";
+import "./CadReceitas.css";
 import logo from "./logo_projeto.png";
 
-const RecipeForm = () => {
-  const [recipeName, setRecipeName] = useState("");
-  const [preparationTime, setPreparationTime] = useState(0);
-  const [ingredients, setIngredients] = useState("");
-  const [preparationSteps, setPreparationSteps] = useState(["", "", ""]);
+const CadReceitas = () => {
+const [recipeName, setRecipeName] = useState("");
+const [preparationTime, setPreparationTime] = useState(0);
+const [ingredients, setIngredients] = useState("");
+const [preparationSteps, setPreparationSteps] = useState(["", "", ""]);
 
-  const handleTimeChange = (event) => {
+const handleTimeChange = (event) => {
     const value = Math.max(0, Number(event.target.value));
     setPreparationTime(value);
-  };
+};
 
-  const addPreparationStep = () => {
+const addPreparationStep = () => {
     setPreparationSteps([...preparationSteps, ""]);
-  };
+};
 
-  const handleStepChange = (index, value) => {
+const handleStepChange = (index, value) => {
     const steps = [...preparationSteps];
     steps[index] = value;
     setPreparationSteps(steps);
-  };
+};
 
-  return (
+return (
     <div className="form-container">
       <div className="form-logo">
         <img src={logo} alt="Logo Cozinha em Bytes" />
@@ -90,4 +90,4 @@ const RecipeForm = () => {
   );
 };
 
-export default RecipeForm;
+export default CadReceitas;
