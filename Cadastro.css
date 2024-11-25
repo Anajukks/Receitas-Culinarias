@@ -1,3 +1,4 @@
+
 body {
     background: linear-gradient(135deg, #d51b21, #ff880c);
     font-family: 'Arial', sans-serif;
@@ -28,7 +29,7 @@ body {
     background: #fff;
     border-radius: 10px;
     padding: 20px 40px; /* Menor altura devido ao menor padding vertical */
-    max-width: 500px; /* Aumenta a largura máxima do formulário */
+    max-width: 400px; /* Aumenta a largura máxima do formulário */
     width: 100%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -102,5 +103,63 @@ body {
   
   .suap-link:hover {
     text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .cadastro-container {
+      padding: 20px;
+    }
+  
+    .cadastro-form {
+      padding: 15px; /* Reduz o padding em telas menores */
+      max-width: 90%; /* Ajusta a largura para caber melhor em telas pequenas */
+      box-shadow: none; /* Remove sombras para simplificar em dispositivos menores */
+    }
+  
+    .cadastro-logo {
+      width: 80%; /* Ajusta o tamanho do logo */
+      height: auto; /* Mantém a proporção do logo */
+    }
+  
+    h2 {
+      font-size: 18px; /* Reduz o tamanho do título */
+    }
+  
+    label {
+      font-size: 12px; /* Reduz o tamanho das labels */
+    }
+  
+    input {
+      font-size: 12px; /* Reduz o tamanho do texto nos campos */
+      padding: 6px; /* Reduz o padding dos campos */
+    }
+  
+    .btn-cadastrar {
+      padding: 10px; /* Ajusta o tamanho do botão */
+      font-size: 14px; /* Reduz o tamanho do texto no botão */
+    }
+  
+    .login-link {
+      font-size: 12px; /* Reduz o tamanho do texto do link */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cadastro-form {
+      padding: 10px; /* Reduz ainda mais o padding */
+    }
+  
+    .cadastro-logo {
+      width: 70%; /* Ajusta o tamanho do logo */
+    }
+  
+    h2 {
+      font-size: 16px; /* Reduz o título em telas muito pequenas */
+    }
+  
+    .btn-cadastrar {
+      padding: 8px; /* Botão menor para telas pequenas */
+      font-size: 12px; /* Texto menor no botão */
+    }
   }
   
