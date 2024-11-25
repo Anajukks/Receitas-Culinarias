@@ -118,12 +118,11 @@ li {
 
 
 
-/* Estilos para ingredientes e modo de preparo lado a lado com linha vertical */
 .instrucao {
     display: flex;
-    justify-content: space-between; /* Espaço entre os dois elementos */
+    justify-content: space-between; 
 
-    position: relative; /* Necessário para o pseudo-elemento */
+    position: relative; 
 }
 
 .passo-a-passo {
@@ -148,7 +147,6 @@ h2 {
     font-size: 24px;
 }
 
-/* Adicionando a linha vertical */
 .instrucao::before {
     content: '';
     position: absolute;
@@ -160,4 +158,39 @@ h2 {
     opacity: 0.4;
     height: 90%;
     margin: auto;
+}
+
+/* Tornando a pág responsiva */
+@media (max-width: 768px) {
+    .informacoes-receita-ind {
+        flex-direction: column; /* Elementos em coluna */
+        align-items: center; /* Centraliza os itens */
+    }
+
+    .imagem-receita-ind {
+        width: 100%; /* Largura total da tela */
+        margin-bottom: 20px; /* Espaço entre seções */
+    }
+
+    .instrucao::before {
+        display: none; /* Remove a linha cinza */
+    }
+
+    .instrucao {
+        display: block; /* Garante que os itens fiquem em bloco */
+    }
+
+    .passo-a-passo {
+        margin: 20px auto; /* Centraliza e espaça os itens */
+        width: 90%; /* Largura reduzida */
+    }
+
+    .ingredientes, ul {
+        columns: 1; /* Apenas uma coluna */
+    }
+
+    .publicacao {
+        text-align: center; /* Centraliza o texto */
+        margin-bottom: 20px; /* Espaço entre seções */
+    }
 }
