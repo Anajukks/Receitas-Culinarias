@@ -86,3 +86,24 @@ hr {
     color: rgb(120, 120, 120);
     margin-left: auto;
 }
+
+
+@media (max-width: 768px) {
+    .body-coment {
+        flex-direction: column; /* Itens em coluna */
+        align-items: flex-start; /* Alinha à esquerda */
+        padding: 10px; /* Adiciona espaçamento */
+    }
+
+    #user {
+        margin-bottom: 10px; /* Espaço entre o usuário e o texto */
+    }
+
+    #user i {
+        font-size: 40px; /* Ajusta o tamanho do ícone */
+    }
+
+    .date {
+        margin-left: 0; /* Remove o alinhamento à direita */
+    }
+}
