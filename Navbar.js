@@ -3,62 +3,85 @@ import logo from './logo_projeto.png';
 import './Navbar.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-
-
 export default function Navbar() {
     return (
         <div>
-            <nav className="navbar fixed-top">
-                <div className="container">
-                    <MenuIcon />
-                    <a className="position-absolute top-50 start-50 translate-middle" href="#">
-                        <img src={logo} alt="Cozinha em Bytes" id="logo" />
-                    </a>
-                    <div id="right-navbar">
-                        <div className="item">
-                            <button type="button" className="btn btn-primary btn-g botao_receita">
-                                <b>Publique sua receita</b>
-                            </button>
+            {/* Barra superior com logo e navegação */}
+            <nav className="navbar">
+                <a href="#">
+                    <img src={logo} alt="Cozinha em Bytes" id="logo" />
+                </a>
+                <div id="right-navbar">
+                    {/* Campo de pesquisa */}
+                    <div className="search-container">
+                        <div className="form-container">
+                            <form>
+                                <input
+                                    type="search"
+                                    placeholder="Procurando algo específico?"
+                                />
+                            </form>
                         </div>
-                        <div className="item">
-                            <i className="bi bi-person-circle fs-1"></i>
-                        </div>
+                        <button type="submit" id='submit-search'>Buscar</button>
+                    </div>
+                    {/* Ícone do usuário */}
+                    <div className="item">
+                        <i className="bi bi-person-circle"></i>
                     </div>
                 </div>
             </nav>
-            <div className='search-container'>
-                <div className='form-container'>
-                    <form className="d-flex">
-                        <input className="form-control me-2" type="search" placeholder="Procurando algo específico?   " aria-label="Search"/>
-                        <button className="btn btn-outline-success btn-search" type="submit">Buscar</button>
-                    </form>
+
+            
+            <hr id='line'/>
+
+            {/* Navegação principal e botão "Publique sua receita" */}
+            <div className="navigation-container">
+                <div className="navigation">
+                    <div className="options">
+                        <a href='#'><MenuIcon /></a>
+                    </div>
+                    <div className="options">
+                        <a href="#">Sobre</a>
+                    </div>
+                    <div className="options">
+                        <a href="#">Contate-nos</a>
+                    </div>
+                </div>
+                <div>
+                    <button className="botao_receita">Publique sua receita</button>
                 </div>
             </div>
         </div>
     );
 }
 
-function MenuIcon(){
+function MenuIcon() {
     const [clique, setClique] = useState(false);
 
     const menu = () => {
-        setClique(!clique); // alter entre verdadeiro e falso
-    }
+        setClique(!clique); // alterna entre verdadeiro e falso
+    };
 
-    return(
-        <div>   
-        {/* // isso qui monta as 3 barrinhas laranjas */}
-            <div className="menu-icon " onClick={menu}>
-                <div></div>
-                <div></div>
-                <div></div>
+    return (
+        <div>
+            <div className="menu-receita" onClick={menu}>
+                <div>
+                    Receita <i className="bi bi-caret-down-fill"></i>
+                </div>
             </div>
 
-            <div className={`menu-content dropdown-menu ${clique ? 'show' : 'hide'}`} >
+            <div className={`menu-content dropdown-menu ${clique ? 'show' : 'hide'}`}>
                 <ul className="list-unstyled lista">
-                    <li><a className="dropdown-item" href="#">Entrar</a></li>
-                    <li><a className="dropdown-item" href="#">Sobre</a></li>
-                    <li><a className="dropdown-item" href="#">Cadastrar Rceita</a></li>
+                    <li>
+                        <a className="dropdown-item" href="#">
+                            Doce
+                        </a>
+                    </li>
+                    <li>
+                        <a className="dropdown-item" href="#">
+                            Salgado
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
