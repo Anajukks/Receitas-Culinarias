@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CadReceitas.css";
+import "./Cadastroreceitas.css";
 import logo from "./logo_projeto.png";
 
 const CadReceitas = () => {
