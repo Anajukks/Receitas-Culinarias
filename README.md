@@ -1,4 +1,5 @@
 Instruções para o FRONTEND
+-
 -PS; os componnetes tão separados nas pastas, mas se der problema de importações(por causa da estrutura das pastas) pode baixar tudo e colocar no SRC  e testar no index normal.
 -
 dê o comando para criar um projeto react "npx create-react-app nome_projeto"
