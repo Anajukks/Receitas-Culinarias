@@ -10,10 +10,10 @@ const initialState = {
   email: '',
   senha: '',
   
-  errors: {}, // Para armazenar os erros dos campos
+  errors: {}, // p/ armazenar os erros dos campos
 };
 
-// Função para gerenciar o estado do formulário
+// gerencia o estado do formulário
 function formReducer(state, action) {
   switch (action.type) {
     case 'UPDATE_FIELD':
@@ -47,7 +47,7 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validação dos campos
+    // valida dos campos
     const errors = {};
     
     if (!state.email.trim()) errors.email = 'Email é obrigatório.';
@@ -60,7 +60,7 @@ export default function Login() {
     }
 
     dispatch({ type: 'CLEAR_ERRORS' });
-    alert('Login realizado com sucesso!'); // Simulação de envio
+    alert('Login realizado com sucesso!'); // simula o de envio
   };
 
   return (
