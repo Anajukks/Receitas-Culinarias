@@ -5,11 +5,11 @@ dê o comando para criar um projeto react "npx create-react-app nome_projeto"
 dê os seguintes comandos para instalar as dependências do Bootstrap
 -
 COMANDOS NECESSÁRIOS PARA RODAR O FRONT
-npm install bootstrap    
-npm install react-bootstrap
-npm install react- bootstrap bootstrap
-npm install bootstrap-icons
-npm start - rodar o react
+  - npm install bootstrap    
+  - npm install react-bootstrap
+  - npm install react- bootstrap bootstrap
+  - npm install bootstrap-icons
+  - npm start - rodar o react
 - Segue abaixo a estrutura do Index.js
 
 *ORGANIZAÇÃO DA ORDEM DOS COMPONENTES EM CADA PÁGINA*
