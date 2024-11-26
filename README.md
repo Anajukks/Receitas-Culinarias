@@ -19,27 +19,41 @@ PÁGINA INICAL
   - Destaque
   - Carousel title="Almoço"
   - Rodape
+-
+-   
 SOBRE
   - Navbar
   - Sobre
   - Meio
   - Conatenos
   - Rodape
+-
+-   
 RECEITAS
   - Navbar
   - <TopicoReceitas title="TORTA SALGADA" tempo="40min"/>
   - Comentario
   - Rodape
+-
+-   
 CADASTRO
   - Cadastro
+-
+-   
 LOGIN
   - login
+-
+-   
 CADASTRO DE RECEITAS
   - CadReceitas
+    
+-
+-
+
 PÁGINA ERRO
   - PaginaErro
-    
-
+-   
+-
 //index.js
 
 import React from 'react';
