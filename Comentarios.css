@@ -90,20 +90,20 @@ hr {
 
 @media (max-width: 768px) {
     .body-coment {
-        flex-direction: column; /* Itens em coluna */
-        align-items: flex-start; /* Alinha à esquerda */
-        padding: 10px; /* Adiciona espaçamento */
+        flex-direction: column; 
+        align-items: flex-start; 
+        padding: 10px; 
     }
 
     #user {
-        margin-bottom: 10px; /* Espaço entre o usuário e o texto */
+        margin-bottom: 10px; 
     }
 
     #user i {
-        font-size: 40px; /* Ajusta o tamanho do ícone */
+        font-size: 40px; 
     }
 
     .date {
-        margin-left: 0; /* Remove o alinhamento à direita */
+        margin-left: 0; 
     }
 }
