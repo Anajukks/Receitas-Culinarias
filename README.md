@@ -12,15 +12,43 @@ npm install bootstrap-icons
 npm start - rodar o react
 - Segue abaixo a estrutura do Index.js
 
+*ORGANIZAÇÃO DA ORDEM DOS COMPONENTES EM CADA PÁGINA*
+
+PÁGINA INICAL
+  - Narbar
+  - Destaque
+  - Carousel title="Almoço"
+  - Rodape
+SOBRE
+  - Navbar
+  - Sobre
+  - Meio
+  - Conatenos
+  - Rodape
+RECEITAS
+  - Navbar
+  - <TopicoReceitas title="TORTA SALGADA" tempo="40min"/>
+  - Comentario
+  - Rodape
+CADASTRO
+  - Cadastro
+LOGIN
+  - login
+CADASTRO DE RECEITAS
+  - CadReceitas
+PÁGINA ERRO
+  - PaginaErro
+    
+
 //index.js
 
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; // LEMBRAR DE IMPORTAR ISSO AQUI
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Navbar from './Navbar';
 import Destaque from './Destaque';
-import FCarousel from './Carousel';
+import Carousel from './Carousel';
 import TopicoReceita from './TopicoReceita';
 import Rodape from './Rodape';
 import Sobre from './Sobre';
