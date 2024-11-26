@@ -31,7 +31,7 @@ SOBRE
 -   
 RECEITAS
   - Navbar
-  - <TopicoReceitas title="TORTA SALGADA" tempo="40min"/>
+  - TopicoReceitas title="TORTA SALGADA" tempo="40min"
   - Comentario
   - Rodape
 -
