@@ -1,23 +1,54 @@
-#tres{
+#tres {
     background-color: #FF880C;
     font-family: sans-serif;
     color: aliceblue;
-}
-#quatro{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
+    padding: 20px;
+    width: 100%; /* ficar ocupando toda a largura da tela */
     text-align: center;
-   
+    display: flex;
+    justify-content: center;
+
 }
-.cinco{
+
+#quatro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+
+.cinco {
     width: 100px;
     font-size: medium;
     font-family: sans-serif;
-    
 }
-.imagem{
+
+.imagem {
     width: 100px;
     height: 100px;
+}
+
+/*telas pequenas */
+@media (max-width: 767px) {
+    .d-flex.justify-content-evenly.p-3.m-3 {
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px; 
+    }
+
+    #quatro {
+        flex-direction: line; 
+        margin: 5px;
+    }
+
+    .imagem {
+        width: 60px; 
+        height: 60px;
+    }
+
+    .cinco {
+        font-size: 0.9rem; 
+    }
 }
