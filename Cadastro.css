@@ -47,7 +47,7 @@ h2 {
 }
   
 .form-group {
-  margin-bottom: 12px; /* Reduz espaçamento entre os campos */
+  margin-bottom: 12px;
   text-align: left;
 }
   
@@ -61,7 +61,7 @@ label {
   
 input {
   width: 100%;
-  padding: 8px; /* Reduz a altura do campo */
+  padding: 8px; 
   font-size: 14px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -74,7 +74,7 @@ input::placeholder {
   
 .btn-cadastrar {
   width: 100%;
-  padding: 12px; /* Mantém o botão confortável */
+  padding: 12px; 
   font-size: 16px;
   color: #fff;
   background: #ff5722;
