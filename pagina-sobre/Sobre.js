@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import logo from './logo_projeto.png';
-import './Navbar.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import equipe from './equipe.png';
 import './Sobre.css';
