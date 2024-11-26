@@ -3,7 +3,7 @@
     font-family: sans-serif;
     color: aliceblue;
     padding: 20px;
-    width: 100%; /* Ocupa toda a largura da tela */
+    width: 100%; /* ficar ocupando toda a largura da tela */
     text-align: center;
     display: flex;
     justify-content: center;
@@ -29,26 +29,26 @@
     height: 100px;
 }
 
-/* Ajustes para telas pequenas */
+/*telas pequenas */
 @media (max-width: 767px) {
     .d-flex.justify-content-evenly.p-3.m-3 {
-        flex-direction: row; /* Coloca "Localização", "Telefone" e "Instagram" em linha */
+        flex-direction: row; 
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px; /* Espaçamento entre os itens */
+        gap: 15px; 
     }
 
     #quatro {
-        flex-direction: line; /* Mantém cada item (imagem e texto) empilhado verticalmente */
+        flex-direction: line; 
         margin: 5px;
     }
 
     .imagem {
-        width: 60px; /* Reduz o tamanho da imagem */
+        width: 60px; 
         height: 60px;
     }
 
     .cinco {
-        font-size: 0.9rem; /* Reduz o tamanho do texto */
+        font-size: 0.9rem; 
     }
 }
