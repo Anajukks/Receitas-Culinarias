@@ -12,7 +12,7 @@ export default function Meio() {
                 <img src={cozinhando} alt="Imagem de culinária" className="img-fluid"/>
             </div>
             
-            {/* Texto descritivo que aparecerá depois da imagem em telas menores */}
+           
             <div className="dois order-md-1">
                 <h6>
                     A culinária desempenha um papel fundamental na vida humana, transcendendo a mera necessidade de se alimentar.
