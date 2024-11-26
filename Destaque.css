@@ -19,7 +19,7 @@ body {
     margin-left: 120px;
 }
 
-/* Ajustes para telas menores */
+/* telas menores */
 @media (max-width: 768px) {
     .texto-apres {
         margin-left: 20px;
@@ -39,10 +39,10 @@ body {
     width: 100%;
 }
 
-/* Ajustes para dispositivos móveis */
+/* dispositivos móveis */
 @media (max-width: 768px) {
     .week-food {
-        flex-direction: column; /* Empilhar conteúdo verticalmente */
+        flex-direction: column; 
         padding: 20px;
         text-align: center;
     }
@@ -53,7 +53,7 @@ body {
     font-size: 30pt;
 }
 
-/* Ajuste do título em dispositivos menores */
+/* título em dispositivos menores */
 @media (max-width: 768px) {
     #destaque-title {
         font-size: 24pt;
@@ -66,7 +66,7 @@ body {
     text-align: justify;
 }
 
-/* Ajuste de texto para dispositivos móveis */
+/* texto para dispositivos móveis */
 @media (max-width: 768px) {
     .destaque-descricao {
         font-size: 10pt;
@@ -80,12 +80,12 @@ body {
     padding: 5px;
 }
 
-/* Ajuste de imagem em dispositivos menores */
+
 @media (max-width: 768px) {
     #img-destaque {
         width: 100%;
         max-width: 300px;
-        margin: 0 auto 15px auto; /* Centralizar a imagem */
+        margin: 0 auto 15px auto;
     }
 }
 
@@ -94,7 +94,7 @@ body {
     color: white;
 }
 
-/* Ajuste de largura para dispositivos móveis */
+
 @media (max-width: 768px) {
     .information-food {
         width: 100%;
