@@ -11,6 +11,7 @@ COMANDOS NECESSÁRIOS PARA RODAR O FRONT
   - npm install react- bootstrap bootstrap
   - npm install bootstrap-icons
   - npm install react-icons
+  - npm install react-router-dom
   - npm start - rodar o react
 - Segue abaixo a estrutura do Index.js
 
