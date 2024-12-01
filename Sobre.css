@@ -1,59 +1,59 @@
-/* Estilos gerais */
-.cozinhando, .equipe {
-    width: 80%; /* Faz com que os elementos usem toda a largura disponível */
-    max-width: 400px; /* Limita o tamanho máximo da largura */
-    height: auto; /* Deixa a altura ajustar automaticamente */
+
+.cozinhando{
+    width: 400px;
+    height: 300px;
+    padding: 15px;
+}
+.equipe{
+    width: 400px;
+    height: 300px;
+}
+
+.descricao-projeto::first-letter {
+    text-transform: uppercase;
+    font-size: 2em; 
+    font-weight: bold;
+}
+
+.descricao-projeto {
+    font-size: 16px; 
+    line-height: 1.6; 
+    word-wrap: break-word; 
+    word-break: break-word; 
     padding: 10px;
+    text-align: justify;
 }
 
-#um {
-    background-color: aquamarine;
-    height: auto; /* Ajusta a altura automaticamente */
-    padding: 10px;
-    margin-top: 30px;
-}
-
-.dois {
+.dois{
+    width: 600px;
+    height: 300px;
     font-family: sans-serif;
-    width: 100%; /* Garante que o conteúdo ocupe toda a largura disponível */
-    max-width: 600px; /* Limita a largura máxima */
-    margin-left: 20px; /* Dá uma distância entre a imagem e o texto */
+}
+.um img{
+    width: 370px;
 }
 
-/* Ajustes de imagem */
-img {
-    width: 100%; /* Faz com que a imagem ocupe 100% da largura disponível */
-    height: auto; /* Mantém a proporção da imagem */
-    font-family: sans-serif;
-    margin-top: 30px;
+.space {
+    margin: 40px;
 }
 
-/* Disposição em telas grandes */
-.d-flex {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 3rem;
-    margin: 3rem;
-}
-
-/* Media Query para telas pequenas (máximo de 768px) */
 @media (max-width: 768px) {
     .d-flex {
-        flex-direction: column; /* Alinha os elementos verticalmente em vez de horizontalmente */
-        justify-content: center; /* Centraliza os itens */
-        align-items: center; /* Garante que os itens fiquem centralizados */
+        flex-direction: column;
+        align-items: center; 
     }
 
     .um, .dois {
-        width: 100%; /* Ajusta os itens para ocupar toda a largura da tela */
-        margin-bottom: 20px; /* Adiciona um espaço entre os elementos */
+        width: 100%;
+        padding: 10px; 
     }
 
-    .dois {
-        text-align: center; /* Centraliza o texto em telas menores */
+    .um img {
+        width: 100%; 
+        height: auto; 
     }
 
-    img {
-        width: 80%; /* A imagem ficará um pouco menor em telas pequenas */
+    .descricao-projeto {
+        font-size: 14px;
     }
 }
