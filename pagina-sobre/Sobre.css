@@ -1,58 +1,58 @@
-
-.cozinhando, .equipe {
-    width: 80%; 
-    max-width: 400px; 
-    height: auto; 
+.cozinhando{
+    width: 400px;
+    height: 300px;
+    padding: 15px;
+}
+.equipe{
+    width: 400px;
+    height: 300px;
 }
 
-#um {
-    background-color: aquamarine;
-    height: auto; 
+.descricao-projeto::first-letter {
+    text-transform: uppercase;
+    font-size: 2em; 
+    font-weight: bold;
+}
+
+.descricao-projeto {
+    font-size: 16px; 
+    line-height: 1.6; 
+    word-wrap: break-word; 
+    word-break: break-word; 
     padding: 10px;
-    margin-top: 30px;
+    text-align: justify;
 }
 
-.dois {
+.dois{
+    width: 600px;
+    height: 300px;
     font-family: sans-serif;
-    width: 100%; 
-    max-width: 600px; 
-    margin-left: 20px; 
+}
+.um img{
+    width: 370px;
 }
 
-/* Ajustes de imagem */
-img {
-    width: 100%; 
-    height: auto; 
-    font-family: sans-serif;
-    margin-top: 30px;
+.space {
+    margin: 40px;
 }
 
-/* telas grandes */
-.d-flex {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 3rem;
-    margin: 3rem;
-}
-
-/*  telas pequenas (máximo de 768px) */
 @media (max-width: 768px) {
     .d-flex {
-        flex-direction: column; 
-        justify-content: center; 
-        align-items: center; 
+        flex-direction: column; /* Faz com que a imagem e o texto fiquem em coluna */
+        align-items: center; /* Alinha ao centro */
     }
 
     .um, .dois {
-        width: 100%; 
-        margin-bottom: 20px; 
+        width: 100%; /* Ambos os elementos ocupam toda a largura disponível */
+        padding: 10px; /* Adiciona algum espaço interno */
     }
 
-    .dois {
-        text-align: center; 
+    .um img {
+        width: 100%; /* A imagem ocupa toda a largura da tela em dispositivos pequenos */
+        height: auto; /* Mantém a proporção da imagem */
     }
 
-    img {
-        width: 80%; 
+    .descricao-projeto {
+        font-size: 14px; /* Diminui o tamanho da fonte para dispositivos menores */
     }
 }
