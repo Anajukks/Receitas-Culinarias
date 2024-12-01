@@ -1,16 +1,15 @@
+/* Estilo base (desktop médio e grande) */
 body {
     padding: 0;
     margin: 0;
-    
 }
 
 #logo {
-    width: 40%;
+    width: 80%;
     height: 100%;
 }
 
-
-#line{
+#line {
     width: 95%;
     background-color: #D51B21;
     border: 1px solid #D51B21;
@@ -28,7 +27,7 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-    gap: 20px; 
+    gap: 20px; /* Espaçamento entre os itens */
 }
 
 .item {
@@ -42,7 +41,7 @@ body {
     background-color: #FF880C;
     border: none;
     border-radius: 25px;
-    padding: 10px 20px;
+    padding: 10px;
     font-weight: bold;
     font-size: 16px;
 }
@@ -56,44 +55,36 @@ body {
     font-size: 40px;
 }
 
-.search-container {
-    display: flex;
-    width: 80%;
-    align-items: center;
-    gap: 10px;
+.form-control input{
+    width: 50%;
 }
 
-
-.form-container input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-#submit-search{
+#submit-search {
     background-color: #FF880C;
     color: white;
     border: none;
     border-radius: 10px;
     padding: 10px 15px;
+    margin-left: 10px;
     font-size: 14px;
 }
 
-#submit-search:hover{
+#submit-search:hover {
     background-color: #D51B21;
     transition: background-color 0.3s ease;
 }
 
 .navigation-container {
     display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    margin: 10px 40px; /
+    justify-content: space-between; /* Itens espaçados horizontalmente */
+    align-items: center; /* Alinhamento vertical */
+    margin: 10px 40px; /* Margem para separar da barra superior */
+    margin-bottom: 40px;
 }
 
 .navigation {
     display: flex;
-    gap: 50px; 
+    gap: 50px; /* Espaçamento entre os itens do menu */
     font-family: sans-serif;
     font-size: 18px;
     color: #FF880C;
@@ -109,3 +100,7 @@ body {
     color: #D51B21;
 }
 
+.logo{
+    width: 30%;
+    height: 100%;
+}
