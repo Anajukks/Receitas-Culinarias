@@ -8,21 +8,22 @@ export default function Navbar() {
         <div>
             {/* Barra superior com logo e navegação */}
             <nav className="navbar">
-                <a href="#">
+                <div className='logo'>
+                    <a href="#">
                     <img src={logo} alt="Cozinha em Bytes" id="logo" />
-                </a>
+                    </a>
+                </div>
                 <div id="right-navbar">
                     {/* Campo de pesquisa */}
                     <div className="search-container">
-                        <div className="form-container">
+                        <div className="form-container-n">
                             <form>
-                                <input
-                                    type="search"
-                                    placeholder="Procurando algo específico?"
-                                />
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="O que você procura?"/>
+                                    <button class="btn btn-outline-secondary" type="button" id='submit-search'>Button</button>
+                                </div>
                             </form>
                         </div>
-                        <button type="submit" id='submit-search'>Buscar</button>
                     </div>
                     {/* Ícone do usuário */}
                     <div className="item">
@@ -72,6 +73,21 @@ function MenuIcon() {
 
             <div className={`menu-content dropdown-menu ${clique ? 'show' : 'hide'}`}>
                 <ul className="list-unstyled lista">
+                    <li>
+                        <a className="dropdown-item" href="#">
+                            Almoço
+                        </a>
+                    </li>
+                    <li>
+                        <a className="dropdown-item" href="#">
+                            Jantar
+                        </a>
+                    </li>
+                    <li>
+                        <a className="dropdown-item" href="#">
+                            Lanche
+                        </a>
+                    </li>
                     <li>
                         <a className="dropdown-item" href="#">
                             Doce
