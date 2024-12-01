@@ -1,4 +1,4 @@
-/* Estilo base (desktop médio e grande) */
+
 body {
     padding: 0;
     margin: 0;
@@ -27,7 +27,7 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-    gap: 20px; /* Espaçamento entre os itens */
+    gap: 20px; 
 }
 
 .item {
@@ -76,15 +76,15 @@ body {
 
 .navigation-container {
     display: flex;
-    justify-content: space-between; /* Itens espaçados horizontalmente */
-    align-items: center; /* Alinhamento vertical */
-    margin: 10px 40px; /* Margem para separar da barra superior */
+    justify-content: space-between; 
+    align-items: center; 
+    margin: 10px 40px; 
     margin-bottom: 40px;
 }
 
 .navigation {
     display: flex;
-    gap: 50px; /* Espaçamento entre os itens do menu */
+    gap: 50px; 
     font-family: sans-serif;
     font-size: 18px;
     color: #FF880C;
