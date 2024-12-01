@@ -6,7 +6,6 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 export default function Navbar() {
     return (
         <div>
-            {/* Barra superior com logo e navegação */}
             <nav className="navbar">
                 <div className='logo'>
                     <a href="#">
@@ -14,7 +13,6 @@ export default function Navbar() {
                     </a>
                 </div>
                 <div id="right-navbar">
-                    {/* Campo de pesquisa */}
                     <div className="search-container">
                         <div className="form-container-n">
                             <form>
@@ -25,7 +23,6 @@ export default function Navbar() {
                             </form>
                         </div>
                     </div>
-                    {/* Ícone do usuário */}
                     <div className="item">
                         <i className="bi bi-person-circle"></i>
                     </div>
@@ -35,7 +32,6 @@ export default function Navbar() {
             
             <hr id='line'/>
 
-            {/* Navegação principal e botão "Publique sua receita" */}
             <div className="navigation-container">
                 <div className="navigation">
                     <div className="options">
