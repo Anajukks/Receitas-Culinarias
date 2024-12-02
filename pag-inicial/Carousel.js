@@ -17,10 +17,10 @@ export default function FCarousel (props){
     return (
         <div className="container my-5">
             <h2 className="text-center title">{props.title}</h2>
-            <Carousel interval={null} className='carrosel'>
+            <Carousel interval={6000} className='carrosel'>
                 <Carousel.Item>
                     <div className="d-flex justify-content-around receitas">
-                        {receitas.slice(0, 5).map((receita, index) => (
+                        {receitas.slice(0, 4).map((receita, index) => (
                             <a key={index} href={receita.link} style={{ textDecoration: 'none', color: 'black' }}>
                                 <div className="text-center">
                                     <img className='foto-receita-carrosel'
@@ -37,10 +37,10 @@ export default function FCarousel (props){
                 </Carousel.Item>
                 <Carousel.Item>
                     <div className="d-flex justify-content-around">
-                        {receitas.slice(3, 8).map((receita, index) => (
+                        {receitas.slice(2, 8).map((receita, index) => (
                             <a key={index} href={receita.link} style={{ textDecoration: 'none', color: 'black' }}>
                                 <div className="text-center">
-                                    <img
+                                    <img className='foto-receita-carrosel'
                                         src={receita.img}
                                         alt={receita.nome}
                                         style={{ width: '200px', borderRadius: '10px' }}
@@ -56,4 +56,3 @@ export default function FCarousel (props){
         </div>
     );
 };
-
