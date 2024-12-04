@@ -39,5 +39,5 @@ se for o mysql(como nós estamos fazendo) tem que startar o mysql no XAMP Contro
 (receitas_culinarias) e a db_password do seu mysql, depois dê o comando "php artisan migrate:fresh" e inicie o servidor Laravel.
 Lembrar também de gerar a key para o arquivo .env
 > `php artisan key:generate`
-> 'php artisan serve' -> rodar o servidor
+> 'php artisan serve' 
 
