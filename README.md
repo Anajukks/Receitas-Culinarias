@@ -1,115 +1,41 @@
-Instruções para o FRONTEND
--
--PS; os componnetes tão separados nas pastas, mas se der problema de importações(por causa da estrutura das pastas) pode baixar tudo e colocar no SRC  e testar no index normal.
--
-dê o comando para criar um projeto react "npx create-react-app nome_projeto"
-dê os seguintes comandos para instalar as dependências do Bootstrap
--
-COMANDOS NECESSÁRIOS PARA RODAR O FRONT
-  - npm install bootstrap    
-  - npm install react-bootstrap
-  - npm install react- bootstrap bootstrap
-  - npm install bootstrap-icons
-  - npm install react-icons
-  - npm install react-router-dom
-  - npm start - rodar o react
-- Segue abaixo a estrutura do Index.js
+# BLOG - COZINHA EM BYTES
 
-*ORGANIZAÇÃO DA ORDEM DOS COMPONENTES EM CADA PÁGINA*
+Projeto desenvolvido com Laravel, React, MySQL e Integração com JWT(autenticação). Um website simples que implementa funcionalidades de um caderno de recetias de maneira virtual e acessível para os usuários.
 
-PÁGINA INICAL
-  - Narbar
-  - Destaque
-  - Carousel title="Almoço"
-  - Rodape
--
--   
-SOBRE
-  - Navbar
-  - Sobre
-  - Meio
-  - Conatenos
-  - Rodape
--
--   
-RECEITAS
-  - Navbar
-  - TopicoReceitas title="TORTA SALGADA" tempo="40min"
-  - Comentario
-  - Rodape
--
--   
-CADASTRO
-  - Cadastro
--
--   
-LOGIN
-  - login
--
--   
-CADASTRO DE RECEITAS
-  - CadReceitas
-    
--
--
+# Front-end
 
-PÁGINA ERRO
-  - PaginaErro
--   
--
-//index.js
+Utilizando React, as páginas da aplicação foram produzidas utilizando Boostrap como framework de CSS. Utiliza os seguintes pacotes: bootstrap, bootstrap-icons,react-icons, react-bootstrap e react-route-dom. Todos podem ser instalados a partir do seguinte comando:
 
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // LEMBRAR DE IMPORTAR ISSO AQUI
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import Navbar from './Navbar';
-import Destaque from './Destaque';
-import Carousel from './Carousel';
-import TopicoReceita from './TopicoReceita';
-import Rodape from './Rodape';
-import Sobre from './Sobre';
-import Meio from './Meio';
-import Contatenos from './Contatenos';
-import reportWebVitals from './reportWebVitals';
+`> npm install bootstrap bootstrap-icons react-icons react-bootstrap react-router-dom`
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <Navbar />
-    <Sobre />
-    <Meio />
-    <Contatenos />
-    <Rodape />
-  </React.StrictMode>
-);
+## Requisição de API
 
+A requisição da API é feita por métodos fetch no arquivo `src/api/http.js`, onde guarda todas as requisições feitas pela aplicação.
 
+# Back-end
 
-//index.css
+Utilizando Laravel, a aplicação foi produzida no formato duplo de aplicação de dados, tendo um banco de dados local MySQL e uma integração com API Online. Ou seja, o site deve ser utilizado com alguma conexão a internet.
 
+### Migrar Dados
 
+Uma variação do 'php artisan migrate' abaixo faz com que ele derrube todas as tabelas e crie novas de acrodo com as migrações, ao invés de seguir o padrão stack de criação de migrações.
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+> `php artisan migrate:fresh`
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+### Preencher Database
 
+Após criar as migrações, é possível preencher o banco de dados vazio com informações já salva no projeto. Detalhe importante: é preciso que o banco de dados esteja vazio ou não tenha esses dados, caso contrário, os dados irão conflitar precisando rodar o comando de migrar dados (php artisan migrate:fresh) para retornar o banco de dados ao 0.
 
+> `php artisan db:seed`
 
+## Banco de Dados
 
-Instruções BACKEND
--
--
-lembrar-se de copiar o ".env.example" para o ".env", lá estabeleça a conexaão via o mysql ou sql
+O banco de dados é feito em MySQL utilizando as Migrations do Laravel. Esse é composto por uma lógica simples de página de receitas, mas eficiente e muito bem pensada. Ele utiliza API REST para realizar a conversão de dados do MySQL para a WEB.
+
+# Instruções BACKEND
+
+Lembrar-se de copiar o ".env.example" para o ".env", lá estabeleça a conexaão via o mysql ou sql
 se for o mysql(como nós estamos fazendo) tem que startar o mysql no XAMP Control e colocar no .env o nome da database
 (receitas_culinarias) e a db_password do seu mysql, depois dê o comando "php artisan migrate:fresh" e inicie o servidor Laravel.
+Lembrar também de gerar a key para o arquivo .env
+> `php artisan key:generate`
