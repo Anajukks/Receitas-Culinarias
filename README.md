@@ -1,13 +1,7 @@
-<<<<<<< HEAD
+
 # Receitas Culinárias
 
-Projeto desenvolvido com Laravel, React, MySQL e Integração com API do SUAP. Um website simples que implementa funcionalidades de um caderno de recetias de maneira virtual e acessível para usuários do SUAP (Alunos, Professores, Técnicos, Etc...).
-
-# Front-end
-
-Utilizando React, as páginas da aplicação foram produzidas utilizando Boostrap como framework de CSS. Utiliza os seguintes pacotes: bootstrap, bootstrap-icons, react-bootstrap e react-route-dom. Todos podem ser instalados a partir do seguinte comando:
-
-`> npm install bootstrap bootstrap-icons react-boostrap react-router-dom`
+Projeto desenvolvido com Laravel, React, MySQL e autenticação com JWT. Um website simples que implementa funcionalidades de um caderno de recetias de maneira virtual.
 
 ## Inicialização
 
@@ -21,8 +15,8 @@ Projeto desenvolvido com Laravel, React, MySQL e Integração com JWT(autentica�
 
 Utilizando React, as páginas da aplicação foram produzidas utilizando Boostrap como framework de CSS. Utiliza os seguintes pacotes: bootstrap, bootstrap-icons,react-icons, react-bootstrap e react-route-dom. Todos podem ser instalados a partir do seguinte comando:
 
-`> npm install bootstrap bootstrap-icons react-icons react-bootstrap react-router-dom`
->>>>>>> f791516b0cc1ce623da7ac394fd2f2d224998641
+`> npm install bootstrap @popperjs/core bootstrap-icons react-boostrap react-router-dom
+
 
 ## Requisição de API
 
@@ -30,7 +24,6 @@ A requisição da API é feita por métodos fetch no arquivo `src/api/http.js`, 
 
 # Back-end
 
-<<<<<<< HEAD
 Utilizando Laravel, a aplicação foi produzida no formato duplo de aplicação de dados, tendo um banco de dados local MySQL e uma integração com API Online. Ou seja, esse site deve ser utilizado com alguma conexão a internet.
 
 ## Laravel
@@ -50,7 +43,7 @@ O comando abaixo cria migrações e pede um nome. Essas migrações são a conex
 Após colocar os dados das tabelas desejadas nas migrações, o comando abaixo solidica essas alterações criando o banco de dados em si com essas informações. Uma variação dele abaixo faz com que ele derrube todas as tabelas e crie novas de acrodo com as migrações, ao invés de seguir o padrão stack de criação de migrações.
 
 > `php artisan migrate` > `php artisan migrate:fresh`
-=======
+
 Utilizando Laravel, a aplicação foi produzida no formato duplo de aplicação de dados, tendo um banco de dados local MySQL e uma integração com API Online. Ou seja, o site deve ser utilizado com alguma conexão a internet.
 
 ### Migrar Dados
@@ -58,7 +51,7 @@ Utilizando Laravel, a aplicação foi produzida no formato duplo de aplicação 
 Uma variação do 'php artisan migrate' abaixo faz com que ele derrube todas as tabelas e crie novas de acrodo com as migrações, ao invés de seguir o padrão stack de criação de migrações.
 
 > `php artisan migrate:fresh`
->>>>>>> f791516b0cc1ce623da7ac394fd2f2d224998641
+
 
 ### Preencher Database
 
@@ -70,7 +63,7 @@ Após criar as migrações, é possível preencher o banco de dados vazio com in
 
 O banco de dados é feito em MySQL utilizando as Migrations do Laravel. Esse é composto por uma lógica simples de página de receitas, mas eficiente e muito bem pensada. Ele utiliza API REST para realizar a conversão de dados do MySQL para a WEB.
 
-<<<<<<< HEAD
+
 ### Model
 
 O modelo é necessário para estabelecer os tipos de dados necessários. Ele também cria as regras de proteçẽos de dados como senhas de usuário. Comando para a criação de modelos:
@@ -99,15 +92,7 @@ A rota 'login' retorna ao usuário um token de acesso que deve ser utilizado com
 
 ### Usuários
 
-Tabela que represente as pessoas que usarão o sistema. Ele possui integridade simples para que pessoas comuns possam se cadastrar mas usuários do SUAP possam integrar suas contas.
-
-#### Perguntas
-
-1. Por que a senha do usuário não é devoldida e no banco facilmente visível?
-
-- Questão inicial de segurança, para mudar isso só ir no arquivo Usuario.php em models e tirar o $hidden. Mas a questão mais segura mesmo é aplicar uma criptografia.
-
-> Contêm: Id, Nome, Matrícula, Email, Senha
+Tabela que represente as pessoas que usarão o sistema. Ele possui integridade simples para que pessoas comuns possam se cadastrar.
 
 ### Receitas
 
@@ -131,15 +116,6 @@ Um elogio, uma crítica, observação ou dicas são sempre bem vindas por outros
 
 > Contêm: Usuario_id, Receita_id, Texto
 
-#### Perguntas
-
-1. Por que no 'Models' de Comentario.php há funçoes adicionais?
-
-- Nativamente o Laravel não aceita chaves compostas (ou seja, que tenham dois atributos) e não há funções que leiam isso. Então é preciso fazer um tipo de filtro com a query do banco de dados, mas ao fazer isso e utilizar o método $comentario->save() é retornado um erro. Isso acontece pois o Laravel não consegue reconhecer sozinho duas chaves, então há um @override no método. O código foi tirado desse link: https://github.com/laravel/framework/issues/5355#issuecomment-161376267
-
-2. Por que só é permitido um comentário por Usuário em Post?
-
-- Isso deve ser decidido e trabalhado com mais detalhes, mas é uma questão de escolha mesmo, se o professor quiser alterar serão feitas as devidas mudanças.
 
 ### Avaliações
 
@@ -147,15 +123,8 @@ Uma avaliação diz o quanto aquela receita foi útil, saborosa, informativa, po
 
 > Contêm: Usuario_id, Receita_id, Estrelas
 
-#### Perguntas
-
-1. Por que no 'Models' de Avaliacao.php há funçoes adicionais?
-
-- Mesmo motivo do Comentário só acessar a seção perguntas dele.
 
 ## API
-
-### Como Utilizar
 
 A API é construída para ser utilizada em rotas. Cada rota tem um retorno próprio que indica que uma ação foi realizada. As rotas podem possuir parâmetros como o request, que é herdado automaticamente, ou adicionais, como id. Para acessar todas as rotas, rode:
 
@@ -168,7 +137,7 @@ Algumas rotas, no grupo do middleware auth:sanctum, precisma de autorização pa
 1. `Authorization Bearer {Seu Token}`
 2. `Accept application/json`
 
-O {Seu Token} sempre é retornado após login o registro. Se não for colocado o segundo header pode retornar um erro 'esquisito', mas é que o auth:sanctum só aceita informações em json, e caso isso não seja especificado toda a $request é retornada como um texto plano.
+O {Seu Token} sempre é retornado após login o registro. Se não for colocado o segundo header pode retornar um erro, mas é que o auth:sanctum só aceita informações em json, e caso isso não seja especificado toda a $request é retornada como um texto plano.
 =======
 # Instruções BACKEND
 
@@ -179,4 +148,3 @@ Lembrar também de gerar a key para o arquivo .env
 > `php artisan key:generate`
 > 'php artisan serve' 
 
->>>>>>> f791516b0cc1ce623da7ac394fd2f2d224998641
