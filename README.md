@@ -11,7 +11,7 @@ Projeto desenvolvido com Laravel, React, MySQL e Integração com JWT(autentica�
 
 Utilizando React, as páginas da aplicação foram produzidas utilizando Boostrap como framework de CSS. Utiliza os seguintes pacotes: bootstrap, bootstrap-icons,react-icons, react-bootstrap e react-route-dom. Todos podem ser instalados a partir do seguinte comando:
 
-> ` npm install bootstrap @popperjs/core bootstrap-icons react-icons react-boostrap react-router-dom`
+> ` npm install bootstrap @popperjs/core bootstrap-icons react-icons react-bootstrap react-router-dom`
 
 ## Requisição de API
 
