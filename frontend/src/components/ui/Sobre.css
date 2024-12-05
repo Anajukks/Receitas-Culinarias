@@ -11,11 +11,13 @@
 .descricao-projeto::first-letter {
     text-transform: uppercase;
     font-size: 2em; 
+    font-family: sans-serif;
     font-weight: bold;
 }
 
 .descricao-projeto {
     font-size: 16px; 
+    font-family: sans-serif;
     line-height: 1.6; 
     word-wrap: break-word; 
     word-break: break-word; 
