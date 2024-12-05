@@ -11,6 +11,7 @@ import Inicio from "./components/pages/inicio";
 import Login from "./components/pages/login";
 import Registro from "./components/pages/registro";
 import Sobre from "./components/pages/sobre";
+import Contatenos from "./components/ui/Contatenos";
 import Receita from "./components/pages/receita";
 import AuthRedirect from "./components/pages/auth";
 import FormularioReceita from "./components/pages/receira-form";
@@ -26,6 +27,7 @@ root.render(
         {/* Normal ROutes */}
         <Route path="/" element={<Inicio />} />
         <Route path="/sobre" element={<Sobre />} />
+        <Route path="/contatenos" element={<Contatenos />} />
         <Route path="/receita/:id" element={<Receita mode="" />} />
 
         {/* Auth Routes */}
