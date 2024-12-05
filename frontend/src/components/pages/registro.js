@@ -55,7 +55,7 @@ const Registro = () => {
     <div className="cadastro-container full-page">
       <div className="cadastro-form">
         <img src={logo} alt="Logo Cozinha em Bytes" className="cadastro-logo" />
-        <h2>CRIAR CONTA</h2>
+        <h2 id="titulo-h2">Criar Conta</h2>
         <form onSubmit={handleRegistro}>
           <div className="form-group">
             <label htmlFor="nome">Nome*</label>
