@@ -164,7 +164,7 @@ export default function Avaliar() {
   return (
     <div className="feedback-container">
       <form onSubmit={handleSubmit} className="feedback-form">
-        <img src={logo} alt="Logo Cozinha em Bytes" className="cadastro-logo" />
+      <a href="/"><img src={logo}  alt="Logo Cozinha em Bytes" className="cadastro-logo" /></a>
         <h2>Avalie a Receita</h2>
         <div className="stars">
           {[...Array(5)].map((_, index) => (
