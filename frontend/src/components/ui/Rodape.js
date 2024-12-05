@@ -10,7 +10,7 @@ export default function Rodape() {
       <div className="rodape-container">
         {/* Logo à esquerda */}
         <div className="logo-section">
-          <img src={logo} alt="Logo" className="logo" />
+        <a href="/"><img src={logo}  alt="Logo Cozinha em Bytes" className="cadastro-logo" /></a>
         </div>
 
         {/* Contatos no centro */}
