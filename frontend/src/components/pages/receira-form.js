@@ -150,7 +150,7 @@ const FormularioReceita = () => {
       <form onSubmit={handleFormulario}>
         <div className="form-container ">
           <div className="form-logo">
-            <img src={logo} alt="Logo Cozinha em Bytes" />
+          <a href="/"><img src={logo}  alt="Logo Cozinha em Bytes" className="cadastro-logo" /></a>
           </div>
           <h1 className="form-title">Cadastrar Receitas</h1>
           <div className="form-columns">
