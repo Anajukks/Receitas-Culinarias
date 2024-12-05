@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { register, setStorageUser } from "../../api/http";
-
+import "./Cadastro.css";
 import logo from "../../assets/logo_projeto.png";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+
 
 const Registro = () => {
   // Valores que se alteram ao longo da página
@@ -10,6 +12,7 @@ const Registro = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [confirmacaoSenha, setConfirmacaoSenha] = useState("");
+  const [mostrarSenha, setMostrarSenha] = useState(false);
 
   // Navegador de páginas
   const navigate = useNavigate();
@@ -52,9 +55,10 @@ const Registro = () => {
   };
 
   return (
-    <div className="cadastro-container full-page">
+
+    <div className="cadastro-container">
       <div className="cadastro-form">
-        <img src={logo} alt="Logo Cozinha em Bytes" className="cadastro-logo" />
+      <a href="/"><img src={logo}  alt="Logo Cozinha em Bytes" className="cadastro-logo" /></a>
         <h2 id="titulo-h2">Criar Conta</h2>
         <form onSubmit={handleRegistro}>
           <div className="form-group">
@@ -84,13 +88,21 @@ const Registro = () => {
           <div className="form-group">
             <label htmlFor="senha">Senha*</label>
             <input
-              type="password"
-              id="senha"
-              name="senha"
-              placeholder="Crie uma senha"
-              value={senha}
-              onChange={(e) => setSenha(e.target.value)}
-            />
+                type={mostrarSenha ? "text" : "password"} // Tipo alterna entre texto e senha
+                id="senha"
+                name="senha"
+                placeholder="Crie uma senha"
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
+              />
+              <button
+                type="button"
+                onClick={() => setMostrarSenha(!mostrarSenha)} // Alterna o estado de visibilidade
+                className="toggle-password"
+              >
+                {mostrarSenha ? <FaEyeSlash /> : <FaEye />} {/* Ícone do olho */}
+              </button>
+            
           </div>
           <div className="form-group">
             <label htmlFor="confirmacaoSenha">Confirmação de Senha*</label>
@@ -101,7 +113,9 @@ const Registro = () => {
               placeholder="Confirme a senha criada"
               value={confirmacaoSenha}
               onChange={(e) => setConfirmacaoSenha(e.target.value)}
-            />
+              />
+             
+            
           </div>
           <button type="submit" className="btn-cadastrar">
             CADASTRAR
