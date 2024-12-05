@@ -50,7 +50,7 @@ const Login = () => {
     <div className="cadastro-container full-page">
       <div className="cadastro-form">
         <img src={logo} alt="Logo Cozinha em Bytes" className="cadastro-logo" />
-        <h2>LOGIN</h2>
+        <h2  id="titulo-h2">Login</h2>
         <form onSubmit={handleLogin}>
           <div className="form-group">
             <label htmlFor="email">Email*</label>
