@@ -95,15 +95,6 @@ A fonte de informação do site. Cada usuário pode publicar diversas receitas e
 
 > Contêm: Id, Usuario_id, Título, Ingredientes, Modo de Preparo, Tempo de Preparo e Imagem
 
-#### Perguntas
-
-1. Por que essa tabela tem uma migração a mais para alterar somente um campo? (Imagem)
-
-- O campo 'binary' padrão de campos de tabela para Laravel é, em MySQL, o condizente a um tipo chamado 'blob', esse tipo de dado é conhecido por armazenar arquivos binários. Imagens não podem ser lidas como textos ou números, então são salvas em seu tipo 'original'. No entanto, o blob tem uma limitação de bytes, então é preciso aplicar uma mudança para longblob. E porquê isso não é feito antes? Por algum motivo o Laravel não permite a criação do campo Imagem se for feita na mesma migração, por isso outra.
-
-2. Por que a API não está retornando a imagem?
-
-- O campo imagem é um binário, se retornado ele será formatado em um tipo json textual, e nesse momento ele ganha um monte de caracteres sem sentindo (normalmente o computador reconhece como um tipo de caixa com '[?]') e acarreta em um erro de UTF-8, não é que há problema no banco ou na requuisição, e sim nesse detalhe, pois a imagem precisará passar por uma transformação mais tarde.
 
 ### Comentários
 
