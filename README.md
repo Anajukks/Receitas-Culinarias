@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Receitas Culinárias
 
 Projeto desenvolvido com Laravel, React, MySQL e Integração com API do SUAP. Um website simples que implementa funcionalidades de um caderno de recetias de maneira virtual e acessível para usuários do SUAP (Alunos, Professores, Técnicos, Etc...).
@@ -11,6 +12,17 @@ Utilizando React, as páginas da aplicação foram produzidas utilizando Boostra
 ## Inicialização
 
 O servidor se inicia com `npm start` e retorna a página principal da aplicação. Um sistema de rotas é utilizado para redirecionamento entre páginas.
+=======
+# BLOG - COZINHA EM BYTES
+
+Projeto desenvolvido com Laravel, React, MySQL e Integração com JWT(autenticação). Um website simples que implementa funcionalidades de um caderno de recetias de maneira virtual e acessível para os usuários.
+
+# Front-end
+
+Utilizando React, as páginas da aplicação foram produzidas utilizando Boostrap como framework de CSS. Utiliza os seguintes pacotes: bootstrap, bootstrap-icons,react-icons, react-bootstrap e react-route-dom. Todos podem ser instalados a partir do seguinte comando:
+
+`> npm install bootstrap bootstrap-icons react-icons react-bootstrap react-router-dom`
+>>>>>>> f791516b0cc1ce623da7ac394fd2f2d224998641
 
 ## Requisição de API
 
@@ -18,6 +30,7 @@ A requisição da API é feita por métodos fetch no arquivo `src/api/http.js`, 
 
 # Back-end
 
+<<<<<<< HEAD
 Utilizando Laravel, a aplicação foi produzida no formato duplo de aplicação de dados, tendo um banco de dados local MySQL e uma integração com API Online. Ou seja, esse site deve ser utilizado com alguma conexão a internet.
 
 ## Laravel
@@ -37,6 +50,15 @@ O comando abaixo cria migrações e pede um nome. Essas migrações são a conex
 Após colocar os dados das tabelas desejadas nas migrações, o comando abaixo solidica essas alterações criando o banco de dados em si com essas informações. Uma variação dele abaixo faz com que ele derrube todas as tabelas e crie novas de acrodo com as migrações, ao invés de seguir o padrão stack de criação de migrações.
 
 > `php artisan migrate` > `php artisan migrate:fresh`
+=======
+Utilizando Laravel, a aplicação foi produzida no formato duplo de aplicação de dados, tendo um banco de dados local MySQL e uma integração com API Online. Ou seja, o site deve ser utilizado com alguma conexão a internet.
+
+### Migrar Dados
+
+Uma variação do 'php artisan migrate' abaixo faz com que ele derrube todas as tabelas e crie novas de acrodo com as migrações, ao invés de seguir o padrão stack de criação de migrações.
+
+> `php artisan migrate:fresh`
+>>>>>>> f791516b0cc1ce623da7ac394fd2f2d224998641
 
 ### Preencher Database
 
@@ -48,6 +70,7 @@ Após criar as migrações, é possível preencher o banco de dados vazio com in
 
 O banco de dados é feito em MySQL utilizando as Migrations do Laravel. Esse é composto por uma lógica simples de página de receitas, mas eficiente e muito bem pensada. Ele utiliza API REST para realizar a conversão de dados do MySQL para a WEB.
 
+<<<<<<< HEAD
 ### Model
 
 O modelo é necessário para estabelecer os tipos de dados necessários. Ele também cria as regras de proteçẽos de dados como senhas de usuário. Comando para a criação de modelos:
@@ -146,3 +169,14 @@ Algumas rotas, no grupo do middleware auth:sanctum, precisma de autorização pa
 2. `Accept application/json`
 
 O {Seu Token} sempre é retornado após login o registro. Se não for colocado o segundo header pode retornar um erro 'esquisito', mas é que o auth:sanctum só aceita informações em json, e caso isso não seja especificado toda a $request é retornada como um texto plano.
+=======
+# Instruções BACKEND
+
+Lembrar-se de copiar o ".env.example" para o ".env", lá estabeleça a conexaão via o mysql ou sql
+se for o mysql(como nós estamos fazendo) tem que startar o mysql no XAMP Control e colocar no .env o nome da database
+(receitas_culinarias) e a db_password do seu mysql, depois dê o comando "php artisan migrate:fresh" e inicie o servidor Laravel.
+Lembrar também de gerar a key para o arquivo .env
+> `php artisan key:generate`
+> 'php artisan serve' 
+
+>>>>>>> f791516b0cc1ce623da7ac394fd2f2d224998641
