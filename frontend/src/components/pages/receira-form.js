@@ -152,7 +152,7 @@ const FormularioReceita = () => {
           <div className="form-logo">
             <img src={logo} alt="Logo Cozinha em Bytes" />
           </div>
-          <h1 className="form-title">CADASTRAR RECEITAS</h1>
+          <h1 className="form-title">Cadastrar Receitas</h1>
           <div className="form-columns">
             <div className="left-column">
               <label>
