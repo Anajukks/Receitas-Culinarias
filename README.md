@@ -1,15 +1,11 @@
 
-# Receitas Culinárias
-
-Projeto desenvolvido com Laravel, React, MySQL e autenticação com JWT. Um website simples que implementa funcionalidades de um caderno de recetias de maneira virtual.
-
-## Inicialização
-
-O servidor se inicia com `npm start` e retorna a página principal da aplicação. Um sistema de rotas é utilizado para redirecionamento entre páginas.
-=======
 # BLOG - COZINHA EM BYTES
 
 Projeto desenvolvido com Laravel, React, MySQL e Integração com JWT(autenticação). Um website simples que implementa funcionalidades de um caderno de recetias de maneira virtual e acessível para os usuários.
+
+## Inicialização do servidor frontend
+
+`> npm start
 
 # Front-end
 
