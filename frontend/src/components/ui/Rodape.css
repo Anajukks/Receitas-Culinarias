@@ -1,0 +1,91 @@
+
+.rodape {
+    background-color: #f0efef;
+    padding: 20px;
+    color: #0f0e0e;
+    text-align: center;
+}
+
+/* Container do rodapé */
+.rodape-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Logo */
+.logo-section .logo {
+    width: 325px;
+}
+
+/* Seção de contatos */
+.contact-section {
+    text-align: center;
+}
+
+.contact-section h5 {
+    color: #FF880C;
+    font-weight: bold;
+}
+
+/* Seção de redes sociais */
+.social-section {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.social-section h5 {
+    color: #FF880C;
+    font-weight: bold;
+}
+
+/* Ícones de redes sociais */
+.social-icons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.icon {
+    font-size: 24px;
+    color: #050404;
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    color: #FF880C;
+}
+
+@media (max-width: 768px) {
+    .rodape-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo-section .logo {
+        width: 250px;  
+    }
+
+    /* Linha abaixo da logo */
+    .logo-section::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #FF880C;
+        margin: 10px 0;
+    }
+
+    .social-icons {
+        flex-direction: row;  
+
+    .contact-section {
+        display: none;
+    }
+}
+}

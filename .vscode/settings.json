@@ -1,0 +1,5 @@
+{
+  "yaml.schemas": {
+    "openapi:v3": "file:///home/anaju/culinary-recipes/backend/public/api/openapi_updated.yaml"
+  }
+}

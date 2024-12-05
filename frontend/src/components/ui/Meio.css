@@ -1,0 +1,13 @@
+.imagem-meio{
+    width: 80%;
+    height: auto;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+.texto-meio {
+    font-family: sans-serif;
+}
+
+.cadastro-logo img{
+    height: 20%;
+}
