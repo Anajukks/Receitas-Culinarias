@@ -1,70 +1,59 @@
-import React, { useReducer } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { login, setStorageUser } from "../../api/http";
+
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./Cadastro.css";
 import logo from "../../assets/logo_projeto.png";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-const initialState = {
-  email: "",
-  senha: "",
+const Login = () => {
+  // Navegador de páginas
+  const navigate = useNavigate();
 
-  errors: {}, // Para armazenar os erros dos campos
-};
+  // Valores que se alteram ao longo da página
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [mostrarSenha, setMostrarSenha] = useState(false);
 
-// Função para gerenciar o estado do formulário
-function formReducer(state, action) {
-  switch (action.type) {
-    case "UPDATE_FIELD":
-      return {
-        ...state,
-        [action.field]: action.value,
-      };
-    case "SET_ERRORS":
-      return {
-        ...state,
-        errors: action.errors,
-      };
-    case "CLEAR_ERRORS":
-      return {
-        ...state,
-        errors: {},
-      };
-    default:
-      return state;
-  }
-}
-
-export default function Login() {
-  const [state, dispatch] = useReducer(formReducer, initialState);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    dispatch({ type: "UPDATE_FIELD", field: name, value });
-  };
-
-  const handleSubmit = (e) => {
+  // Função para lidar com a requisição
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    // Validação dos campos
-    const errors = {};
+    try {
+      // Recupera os valores da api
+      const data = await login(email, senha);
 
-    if (!state.email.trim()) errors.email = "Email é obrigatório.";
-    if (!state.senha.trim()) errors.senha = "Senha é obrigatória.";
+      // Verificando se há erros
+      if (data.errors) {
+        // Coletar os erros
+        const errors = Object.values(data.errors);
 
-    if (Object.keys(errors).length > 0) {
-      dispatch({ type: "SET_ERRORS", errors });
-      return;
+        // Produzir uma mensagem de errors
+        let errorMessage = `Aconteceu um erro: `;
+        errors.map((error) => (errorMessage += error));
+
+        // Mostrar a Mensagem
+        alert(errorMessage);
+      } else {
+        // Adicionar os valores de id do usuário e access_token no local storage
+        setStorageUser(data.user_id, data.access_token);
+
+        // Retorna para a página inicial
+        navigate("/");
+      }
+    } catch (error) {
+      // Atualiza na página o erro que aconteceu
+      alert(`Aconteceu um erro: ${error}`);
     }
-
-    dispatch({ type: "CLEAR_ERRORS" });
-    alert("Login realizado com sucesso!"); // Simulação de envio
   };
 
   return (
-    <div className="full-page">
+    <div className="cadastro-container ">
       <div className="cadastro-form">
-        <img src={logo} alt="Logo Cozinha em Bytes" className="cadastro-logo" />
-        <p className="title-login">LOGIN</p>
-        <form onSubmit={handleSubmit}>
+      <a href="/"><img src={logo}  alt="Logo Cozinha em Bytes" className="cadastro-logo" /></a>
+        <h2  id="titulo-h2">Login</h2>
+        <form onSubmit={handleLogin}>
           <div className="form-group">
             <label htmlFor="email">Email*</label>
             <input
@@ -72,37 +61,41 @@ export default function Login() {
               id="email"
               name="email"
               placeholder="Digite seu email"
-              value={state.email}
-              onChange={handleChange}
-              className={state.errors.email ? "input-error" : ""}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              // className={state.errors.email ? "input-error" : ""}
             />
-            {state.errors.email && (
+            {/* {state.errors.email && (
               <small className="error-text">{state.errors.email}</small>
-            )}
+            )} */}
           </div>
           <div className="form-group">
             <label htmlFor="senha">Senha*</label>
             <input
-              type="password"
-              id="senha"
-              name="senha"
-              placeholder="Crie uma senha"
-              value={state.senha}
-              onChange={handleChange}
-              className={state.errors.senha ? "input-error" : ""}
-            />
-            {state.errors.senha && (
+                type={mostrarSenha ? "text" : "password"} // Tipo alterna entre texto e senha
+                id="senha"
+                name="senha"
+                placeholder="Digite sua senha"
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
+              />
+              <button
+                type="button"
+                onClick={() => setMostrarSenha(!mostrarSenha)} // Alterna o estado de visibilidade
+                className="toggle-password"
+              >
+                {mostrarSenha ? <FaEyeSlash /> : <FaEye />} {/* Ícone do olho */}
+              </button>
+            {/* {state.errors.senha && (
               <small className="error-text">{state.errors.senha}</small>
-            )}
+            )} */}
           </div>
           <br></br>
           <button type="submit" className="btn-cadastrar">
             ENVIAR
           </button>
         </form>
-        <a href="/login" className="login-link">
-          Logar com <span className="suap-link">SUAP</span>
-        </a>
+       <br></br>
         <a href="/registro" className="cadastro-link">
           Não tem uma conta?{" "}
           <span className="cad-link">
@@ -112,4 +105,6 @@ export default function Login() {
       </div>
     </div>
   );
-}
+};
+
+export default Login;
